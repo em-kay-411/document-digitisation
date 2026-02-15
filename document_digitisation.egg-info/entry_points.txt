@@ -1,0 +1,2 @@
+[console_scripts]
+extract-form = src.main:main

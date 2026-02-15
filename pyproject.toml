@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-digitisation"
+version = "0.1.0"
+description = "PDF Form to JSON Extractor using LangGraph and Claude"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2.0",
+    "langgraph-checkpoint-sqlite>=2.0.0",
+    "langchain-core>=0.3.0",
+    "anthropic>=0.40.0",
+    "instructor>=1.7.0",
+    "pypdf>=4.0.0",
+    "docling>=2.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+extract-form = "src.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

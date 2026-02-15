@@ -14,13 +14,13 @@
           "type": "text",
           "label": "First Name",
           "placeholder": "Enter your first name",
-          "help_text": "Enter the primary applicant's legal first name as it appears on official documents",
+          "help_text": "Enter your legal first name as it appears on official documents",
           "required": true,
           "page": 1,
           "order": 1,
-          "group": "primary_applicant_information",
+          "group": "applicant_personal_information",
           "validation": {
-            "max_length": 50,
+            "max_length": 100,
             "pattern": "^[a-zA-Z\\s'-]+$"
           }
         },
@@ -29,12 +29,12 @@
           "pdf_field_name": "applicant_middle_name",
           "type": "text",
           "label": "Middle Name",
-          "placeholder": "Middle Name",
-          "help_text": "Enter your middle name as it appears on your government-issued identification. Leave blank if you don't have a middle name.",
+          "placeholder": "Enter middle name",
+          "help_text": "Enter your middle name exactly as it appears on your government-issued identification. Leave blank if you don't have a middle name.",
           "required": false,
           "page": 1,
           "order": 2,
-          "group": "primary_applicant_name",
+          "group": "applicant_legal_name",
           "validation": {
             "max_length": 50,
             "pattern": "^[a-zA-Z\\s'-]*$"
@@ -45,12 +45,12 @@
           "pdf_field_name": "applicant_last_name",
           "type": "text",
           "label": "Last Name",
-          "placeholder": "Enter last name",
-          "help_text": "Enter your legal last name exactly as it appears on your government-issued identification",
+          "placeholder": "Enter your last name",
+          "help_text": "Provide your legal last name exactly as it appears on your government-issued identification",
           "required": true,
           "page": 1,
           "order": 3,
-          "group": "applicant_name",
+          "group": "applicant_identity",
           "validation": {
             "max_length": 100,
             "pattern": "^[A-Za-z\\s'-]+$"
@@ -61,8 +61,8 @@
           "pdf_field_name": "applicant_suffix",
           "type": "text",
           "label": "Suffix",
-          "placeholder": "Jr., Sr., III, etc.",
-          "help_text": "Optional name suffix (e.g., Jr., Sr., II, III, IV, Esq.)",
+          "placeholder": "e.g., Jr., Sr., III",
+          "help_text": "Optional name suffix (Jr., Sr., II, III, etc.)",
           "required": false,
           "page": 1,
           "order": 4,
@@ -76,8 +76,8 @@
           "pdf_field_name": "applicant_ssn",
           "type": "text",
           "label": "Social Security Number",
-          "placeholder": "###-##-####",
-          "help_text": "Enter your 9-digit Social Security Number. This information is required for identity verification purposes.",
+          "placeholder": "XXX-XX-XXXX",
+          "help_text": "Enter your 9-digit Social Security Number. Required for primary applicant identification.",
           "required": true,
           "page": 1,
           "order": 5,
@@ -93,7 +93,7 @@
           "type": "date",
           "label": "Date of Birth",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter your date of birth as it appears on your government-issued identification",
+          "help_text": "Enter your date of birth exactly as it appears on your government-issued identification",
           "required": true,
           "page": 1,
           "order": 6,
@@ -109,13 +109,13 @@
           "type": "text",
           "label": "Email Address",
           "placeholder": "example@email.com",
-          "help_text": "Enter a valid email address where we can reach you",
+          "help_text": "Enter your email address for application correspondence and notifications",
           "required": true,
           "page": 1,
           "order": 7,
           "group": "Primary Applicant Information",
           "validation": {
-            "max_length": 255,
+            "max_length": 254,
             "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
           }
         },
@@ -132,7 +132,7 @@
           "group": "contact_information",
           "validation": {
             "max_length": 20,
-            "pattern": "^[\\d\\s\\(\\)\\-\\+\\.]+$"
+            "pattern": "^[\\d\\s\\-\\(\\)\\+]+$"
           }
         },
         {
@@ -141,14 +141,14 @@
           "type": "text",
           "label": "Alternate Phone Number",
           "placeholder": "(555) 123-4567",
-          "help_text": "Optional secondary contact number for the applicant",
+          "help_text": "Provide an alternate phone number where you can be reached if needed",
           "required": false,
           "page": 1,
           "order": 9,
           "group": "contact_information",
           "validation": {
             "max_length": 20,
-            "pattern": "^[\\d\\s\\(\\)\\-\\.\\+]+$"
+            "pattern": "^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"
           }
         },
         {
@@ -160,7 +160,7 @@
           "required": true,
           "page": 1,
           "order": 10,
-          "group": "applicant_identification",
+          "group": "identification",
           "options": [
             "-- Select --",
             "Driver's License",
@@ -176,7 +176,7 @@
           "type": "text",
           "label": "ID Number",
           "placeholder": "Enter your government ID number",
-          "help_text": "Enter the identification number from your selected government-issued ID document",
+          "help_text": "Enter the identification number from the government-issued ID you selected above",
           "required": true,
           "page": 1,
           "order": 11,
@@ -196,18 +196,16 @@
           "required": true,
           "page": 1,
           "order": 12,
-          "group": "identification",
-          "validation": {
-            "max_length": 2
-          }
+          "group": "applicant_identification",
+          "validation": {}
         },
         {
           "field_id": "field_013",
           "pdf_field_name": "applicant_id_expiry",
           "type": "date",
-          "label": "ID Expiration Date",
+          "label": "Expiration Date",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the expiration date shown on your identification document",
+          "help_text": "Enter the expiration date from your identification document",
           "required": true,
           "page": 1,
           "order": 13,
@@ -220,7 +218,7 @@
           "type": "text",
           "label": "Street Address",
           "placeholder": "123 Main Street",
-          "help_text": "Enter your street address (line 1)",
+          "help_text": "Enter the first line of your street address",
           "required": true,
           "page": 1,
           "order": 14,
@@ -233,9 +231,9 @@
           "field_id": "field_015",
           "pdf_field_name": "address_street2",
           "type": "text",
-          "label": "Apartment/Unit/Suite",
-          "placeholder": "Apt 2B, Unit 5, Suite 100, etc.",
-          "help_text": "Optional: Enter your apartment, unit, or suite number if applicable",
+          "label": "Address Line 2",
+          "placeholder": "Apt, Suite, Unit, Building, Floor, etc. (optional)",
+          "help_text": "Enter apartment number, suite, unit, or other secondary address information if applicable",
           "required": false,
           "page": 1,
           "order": 15,
@@ -250,14 +248,14 @@
           "type": "text",
           "label": "City",
           "placeholder": "Enter city",
-          "help_text": "Enter the city of your current address",
+          "help_text": "Enter the city of your current residential address",
           "required": true,
           "page": 1,
           "order": 16,
-          "group": "address",
+          "group": "current_address",
           "validation": {
             "max_length": 100,
-            "pattern": "^[a-zA-Z\\s\\-'.]+$"
+            "pattern": "^[a-zA-Z\\s\\-\\.]+$"
           }
         },
         {
@@ -265,8 +263,8 @@
           "pdf_field_name": "address_state",
           "type": "dropdown",
           "label": "State",
-          "placeholder": "Select state",
-          "help_text": "Select the state for your current address",
+          "placeholder": "e.g., CA, NY, TX",
+          "help_text": "Enter the two-letter state abbreviation for your address",
           "required": true,
           "page": 1,
           "order": 17,
@@ -297,11 +295,11 @@
           "pdf_field_name": "address_residence_type",
           "type": "dropdown",
           "label": "Residence Type",
-          "help_text": "Select whether you own your home, rent, live with family, or have another living arrangement",
+          "help_text": "Select whether you own your home, rent, live with family, or have another living arrangement.",
           "required": true,
           "page": 1,
           "order": 19,
-          "group": "residential_information",
+          "group": "residence_information",
           "options": [
             "-- Select --",
             "Own",
@@ -320,9 +318,10 @@
           "required": true,
           "page": 1,
           "order": 20,
-          "group": "current_residence",
+          "group": "residence_information",
           "validation": {
             "max_length": 5,
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0,
             "max_value": 100.0
           }
@@ -340,8 +339,7 @@
           "group": "address_information",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,2})?$",
-            "min_value": 0.0,
-            "max_value": 999999.99
+            "min_value": 0.0
           }
         }
       ]
@@ -356,11 +354,11 @@
           "pdf_field_name": "has_co_applicant",
           "type": "checkbox",
           "label": "Co-Applicant",
-          "help_text": "Check this box if there is a co-applicant applying for this loan with you",
+          "help_text": "Check this box if there is a co-applicant for this loan. You will need to provide the co-applicant's information including name, SSN, and email address.",
           "required": false,
           "page": 2,
           "order": 22,
-          "group": "co_applicant_information"
+          "group": "co_applicant_section"
         },
         {
           "field_id": "field_023",
@@ -368,14 +366,14 @@
           "type": "text",
           "label": "Co-Applicant First Name",
           "placeholder": "Enter first name",
-          "help_text": "First name of the co-applicant applying for this loan (only if there is a co-applicant)",
+          "help_text": "First name of the co-applicant (only required if there is a co-applicant for this loan)",
           "required": false,
           "page": 2,
           "order": 23,
-          "group": "co_applicant_information",
+          "group": "co_applicant",
           "validation": {
             "max_length": 50,
-            "pattern": "^[a-zA-Z\\s'-]+$"
+            "pattern": "^[A-Za-z\\s'-]+$"
           }
         },
         {
@@ -383,15 +381,15 @@
           "pdf_field_name": "co_middle_name",
           "type": "text",
           "label": "Co-Applicant Middle Name",
-          "placeholder": "Middle name or initial",
-          "help_text": "Enter the co-applicant's middle name or initial. This field is optional.",
+          "placeholder": "Middle name",
+          "help_text": "Middle name of the co-applicant (spouse, business partner, or guarantor). Leave blank if not applicable.",
           "required": false,
           "page": 2,
           "order": 24,
           "group": "co_applicant_information",
           "validation": {
             "max_length": 50,
-            "pattern": "^[a-zA-Z\\s\\.\\-]*$"
+            "pattern": "^[a-zA-Z\\s'-]*$"
           }
         },
         {
@@ -400,7 +398,7 @@
           "type": "text",
           "label": "Co-Applicant Last Name",
           "placeholder": "Enter last name",
-          "help_text": "Required only if there is a co-applicant (spouse, business partner, or guarantor). The co-applicant's credit history will be considered in the evaluation.",
+          "help_text": "Provide the last name of the co-applicant (spouse, business partner, or guarantor) if applicable.",
           "required": false,
           "page": 2,
           "order": 25,
@@ -415,15 +413,15 @@
           "pdf_field_name": "co_ssn",
           "type": "text",
           "label": "Co-Applicant Social Security Number",
-          "placeholder": "XXX-XX-XXXX",
-          "help_text": "Enter the Social Security Number of the co-applicant. This field is only required if there is a co-applicant for this loan.",
+          "placeholder": "###-##-####",
+          "help_text": "Enter the Social Security Number for the co-applicant. This field is only required if you are applying with a co-applicant.",
           "required": false,
           "page": 2,
           "order": 26,
           "group": "co_applicant_information",
           "validation": {
             "max_length": 11,
-            "pattern": "^\\d{3}-\\d{2}-\\d{4}$|^\\d{9}$"
+            "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$"
           }
         },
         {
@@ -432,15 +430,12 @@
           "type": "date",
           "label": "Co-Applicant Date of Birth",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the date of birth for the co-applicant (spouse, business partner, or guarantor). Required only if there is a co-applicant.",
-          "required": false,
+          "help_text": "Enter the co-applicant's date of birth. This information is used for identity verification and credit history evaluation.",
+          "required": true,
           "page": 2,
           "order": 27,
           "group": "co_applicant_information",
-          "validation": {
-            "max_length": 10,
-            "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
-          }
+          "validation": {}
         },
         {
           "field_id": "field_028",
@@ -448,14 +443,14 @@
           "type": "text",
           "label": "Co-Applicant Phone Number",
           "placeholder": "(555) 123-4567",
-          "help_text": "Phone number for the co-applicant (spouse, business partner, or guarantor)",
-          "required": false,
+          "help_text": "Enter the co-applicant's primary contact phone number",
+          "required": true,
           "page": 2,
           "order": 28,
           "group": "co_applicant_information",
           "validation": {
-            "max_length": 20,
-            "pattern": "^[\\d\\s\\(\\)\\-\\.\\+]+$"
+            "max_length": 14,
+            "pattern": "^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"
           }
         },
         {
@@ -464,8 +459,8 @@
           "type": "text",
           "label": "Co-Applicant Email Address",
           "placeholder": "example@email.com",
-          "help_text": "Enter the email address for the co-applicant on this loan application",
-          "required": true,
+          "help_text": "Enter the co-applicant's email address for correspondence regarding this loan application",
+          "required": false,
           "page": 2,
           "order": 29,
           "group": "co_applicant_information",
@@ -479,7 +474,7 @@
           "pdf_field_name": "co_relationship",
           "type": "dropdown",
           "label": "Relationship to Primary Applicant",
-          "help_text": "Select how the co-applicant is related to the primary applicant on this loan application",
+          "help_text": "Select how the co-applicant is related to the primary applicant on this application",
           "required": true,
           "page": 2,
           "order": 30,
@@ -498,12 +493,12 @@
           "pdf_field_name": "emp_current_employer",
           "type": "text",
           "label": "Current Employer",
-          "placeholder": "Enter your current employer's name",
-          "help_text": "Provide the legal name of your current employer or company you work for",
+          "placeholder": "Enter employer name or 'Retired'",
+          "help_text": "Enter your current employer's name. If self-employed, enter your business name. If retired, enter 'Retired' and provide pension or retirement income details in the financial section.",
           "required": true,
           "page": 2,
           "order": 31,
-          "group": "employment_information_primary",
+          "group": "employment_information",
           "validation": {
             "max_length": 200
           }
@@ -513,7 +508,7 @@
           "pdf_field_name": "emp_current_title",
           "type": "text",
           "label": "Job Title",
-          "placeholder": "e.g., Software Engineer, Manager, Sales Associate",
+          "placeholder": "e.g., Software Engineer, Marketing Manager",
           "help_text": "Enter your current job title or position at your employer",
           "required": true,
           "page": 2,
@@ -528,33 +523,33 @@
           "pdf_field_name": "emp_current_years",
           "type": "text",
           "label": "Years Employed",
-          "placeholder": "e.g., 2",
-          "help_text": "Enter the number of years you have been employed at your current position. If less than one year, enter 0 and specify months in the adjacent field.",
+          "placeholder": "e.g., 3",
+          "help_text": "Enter the number of years you have been employed at your current position. Use the months field for partial years.",
           "required": true,
           "page": 2,
           "order": 33,
-          "group": "employment_duration",
+          "group": "employment_history",
           "validation": {
-            "max_length": 3,
+            "max_length": 2,
             "pattern": "^[0-9]+$",
             "min_value": 0.0,
-            "max_value": 100.0
+            "max_value": 99.0
           }
         },
         {
           "field_id": "field_034",
           "pdf_field_name": "emp_current_months",
           "type": "text",
-          "label": "Months at Current Employer",
+          "label": "Months",
           "placeholder": "0-11",
-          "help_text": "Enter the number of months (0-11) you've been employed at your current job. Use with 'Years Employed' to indicate total employment duration.",
+          "help_text": "Enter the number of months (0-11) you have been employed at your current position. Use this field together with 'Years Employed' to specify your total employment duration.",
           "required": true,
           "page": 2,
           "order": 34,
-          "group": "current_employment",
+          "group": "employment_duration",
           "validation": {
             "max_length": 2,
-            "pattern": "^(0?[0-9]|1[0-1])$",
+            "pattern": "^([0-9]|1[0-1])$",
             "min_value": 0.0,
             "max_value": 11.0
           }
@@ -564,8 +559,8 @@
           "pdf_field_name": "emp_current_address",
           "type": "text",
           "label": "Current Employer Address",
-          "placeholder": "123 Main St, City, State ZIP",
-          "help_text": "Enter the complete address of your current employer",
+          "placeholder": "123 Main Street, City, State ZIP",
+          "help_text": "Enter the full address of your current employer. If retired, state 'Retired' and provide pension or retirement income details in the financial section.",
           "required": true,
           "page": 2,
           "order": 35,
@@ -578,16 +573,16 @@
           "field_id": "field_036",
           "pdf_field_name": "emp_current_phone",
           "type": "text",
-          "label": "Employer Phone",
+          "label": "Employer Phone Number",
           "placeholder": "(555) 123-4567",
-          "help_text": "Enter your current employer's contact phone number",
+          "help_text": "Enter the main phone number of your current employer",
           "required": true,
           "page": 2,
           "order": 36,
           "group": "current_employment",
           "validation": {
             "max_length": 20,
-            "pattern": "^[\\d\\s\\(\\)\\-\\.\\+]+$"
+            "pattern": "^[\\d\\s\\-\\(\\)\\+\\.ext]+$"
           }
         },
         {
@@ -600,9 +595,8 @@
           "required": true,
           "page": 2,
           "order": 37,
-          "group": "employment_information",
+          "group": "current_employment",
           "validation": {
-            "max_length": 10,
             "pattern": "^[0-9]+$",
             "min_value": 0.0,
             "max_value": 99999999.0
@@ -613,11 +607,11 @@
           "pdf_field_name": "emp_current_type",
           "type": "dropdown",
           "label": "Employment Type",
-          "help_text": "Select your current employment status. If you have been at your current job for less than 2 years, you may need to provide previous employment information.",
+          "help_text": "Select the type of employment for your previous employer. Required if you have been at your current job for less than 2 years.",
           "required": true,
           "page": 2,
           "order": 38,
-          "group": "current_employment",
+          "group": "previous_employment",
           "options": [
             "-- Select --",
             "Full-time",
@@ -633,8 +627,8 @@
           "pdf_field_name": "emp_prev_employer",
           "type": "text",
           "label": "Previous Employer Name",
-          "placeholder": "Enter company name",
-          "help_text": "Only required if you have been at your current employer for less than 2 years",
+          "placeholder": "Enter previous employer name",
+          "help_text": "Required only if you have been at your current employer for less than 2 years",
           "required": false,
           "page": 2,
           "order": 39,
@@ -647,9 +641,9 @@
           "field_id": "field_040",
           "pdf_field_name": "emp_prev_title",
           "type": "text",
-          "label": "Job Title",
-          "placeholder": "e.g., Sales Manager, Software Engineer",
-          "help_text": "Enter your job title at your previous employer. Only required if you have been at your current employer for less than 2 years.",
+          "label": "Previous Job Title",
+          "placeholder": "e.g., Marketing Manager, Software Engineer",
+          "help_text": "Enter your job title at your previous employer (only required if you've been at your current job for less than 2 years)",
           "required": false,
           "page": 2,
           "order": 40,
@@ -662,18 +656,18 @@
           "field_id": "field_041",
           "pdf_field_name": "emp_prev_years",
           "type": "text",
-          "label": "Years at Previous Employer",
-          "placeholder": "e.g., 2",
-          "help_text": "Enter the number of years you worked at your previous employer (only required if you've been at your current employer for less than 2 years)",
+          "label": "Years at Previous Employment",
+          "placeholder": "e.g., 3",
+          "help_text": "Enter the number of years you worked at your previous employer",
           "required": false,
           "page": 2,
           "order": 41,
           "group": "previous_employment",
           "validation": {
-            "max_length": 10,
+            "max_length": 5,
             "pattern": "^\\d+(\\.\\d+)?$",
             "min_value": 0.0,
-            "max_value": 50.0
+            "max_value": 100.0
           }
         }
       ]
@@ -688,14 +682,14 @@
           "pdf_field_name": "biz_legal_name",
           "type": "text",
           "label": "Legal Business Name",
-          "placeholder": "Enter the official registered business name",
-          "help_text": "Provide the complete legal name of your business as it appears on official registration documents. If the business is not yet established, indicate 'Startup' for the business type.",
+          "placeholder": "Enter the legal name of your business",
+          "help_text": "Provide the official legal name of your business as registered with the state. This should match your incorporation or registration documents.",
           "required": true,
           "page": 3,
           "order": 42,
-          "group": "business_identification",
+          "group": "business_information",
           "validation": {
-            "max_length": 255
+            "max_length": 200
           }
         },
         {
@@ -703,14 +697,14 @@
           "pdf_field_name": "biz_dba",
           "type": "text",
           "label": "DBA / Trade Name",
-          "placeholder": "Enter DBA or trade name if applicable",
-          "help_text": "Enter the \"Doing Business As\" (DBA) or trade name only if it differs from your legal business name. Leave blank if not applicable.",
+          "placeholder": "e.g., Joe's Coffee Shop",
+          "help_text": "Enter the \"Doing Business As\" name or trade name if your business operates under a name different from its legal registered name.",
           "required": false,
           "page": 3,
           "order": 43,
-          "group": "business_information",
+          "group": "business_identification",
           "validation": {
-            "max_length": 200
+            "max_length": 255
           }
         },
         {
@@ -718,8 +712,8 @@
           "pdf_field_name": "biz_ein",
           "type": "text",
           "label": "Federal EIN (Tax ID)",
-          "placeholder": "12-3456789",
-          "help_text": "Enter your 9-digit Employer Identification Number (EIN) assigned by the IRS. Format: XX-XXXXXXX",
+          "placeholder": "XX-XXXXXXX",
+          "help_text": "Enter your 9-digit Federal Employer Identification Number (EIN) assigned by the IRS. Format: XX-XXXXXXX",
           "required": true,
           "page": 3,
           "order": 44,
@@ -734,7 +728,7 @@
           "pdf_field_name": "biz_entity_type",
           "type": "dropdown",
           "label": "Business Entity Type",
-          "help_text": "Select the legal structure of your business. This determines how your business is taxed and your personal liability. Common options include Sole Proprietorship (individual owner), LLC (limited liability company), or Corporation.",
+          "help_text": "Select the legal structure of your business. This determines how your business is taxed and your liability exposure.",
           "required": true,
           "page": 3,
           "order": 45,
@@ -755,7 +749,7 @@
           "pdf_field_name": "biz_industry",
           "type": "dropdown",
           "label": "Industry / NAICS Code",
-          "help_text": "Select the primary industry classification for your business. NAICS (North American Industry Classification System) codes are used for statistical and tax purposes.",
+          "help_text": "Select the primary industry that best describes your business operations. This corresponds to the North American Industry Classification System (NAICS).",
           "required": true,
           "page": 3,
           "order": 46,
@@ -781,20 +775,22 @@
           "type": "date",
           "label": "Date Established",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the date when your business was officially established or incorporated",
+          "help_text": "Enter the date when your business was officially established or registered",
           "required": true,
           "page": 3,
           "order": 47,
           "group": "business_information",
-          "validation": {}
+          "validation": {
+            "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
+          }
         },
         {
           "field_id": "field_048",
           "pdf_field_name": "biz_state_of_inc",
-          "type": "dropdown",
+          "type": "text",
           "label": "State of Incorporation",
-          "placeholder": "Select a state",
-          "help_text": "Select the state where your business was incorporated or formed",
+          "placeholder": "e.g., CA, NY, DE",
+          "help_text": "Enter the two-letter state abbreviation where your business is incorporated or organized",
           "required": true,
           "page": 3,
           "order": 48,
@@ -827,7 +823,7 @@
           "type": "text",
           "label": "Business Address - Street",
           "placeholder": "123 Main Street, Suite 100",
-          "help_text": "Enter the street address where your business is located (street number, street name, and unit/suite if applicable)",
+          "help_text": "Enter the street address of your business location",
           "required": true,
           "page": 3,
           "order": 50,
@@ -849,15 +845,15 @@
           "group": "business_address",
           "validation": {
             "max_length": 100,
-            "pattern": "^[a-zA-Z\\s\\-\\.]+$"
+            "pattern": "^[a-zA-Z\\s\\-'.]+$"
           }
         },
         {
           "field_id": "field_052",
           "pdf_field_name": "biz_address_state",
-          "type": "dropdown",
+          "type": "text",
           "label": "State",
-          "placeholder": "CA",
+          "placeholder": "e.g., CA, NY, TX",
           "help_text": "Enter the two-letter state abbreviation for the business address",
           "required": true,
           "page": 3,
@@ -873,7 +869,7 @@
           "pdf_field_name": "biz_address_zip",
           "type": "text",
           "label": "ZIP Code",
-          "placeholder": "e.g., 12345 or 12345-6789",
+          "placeholder": "12345 or 12345-6789",
           "help_text": "Enter the ZIP code for the business address",
           "required": true,
           "page": 3,
@@ -890,14 +886,14 @@
           "type": "text",
           "label": "Business Phone",
           "placeholder": "(555) 123-4567",
-          "help_text": "Enter the primary contact phone number for your business",
+          "help_text": "Enter the primary phone number for your business",
           "required": true,
           "page": 3,
           "order": 54,
           "group": "Business Ownership",
           "validation": {
             "max_length": 20,
-            "pattern": "^[\\d\\s\\(\\)\\-\\.\\+]+$"
+            "pattern": "^[\\d\\s\\(\\)\\-\\+\\.]+$"
           }
         },
         {
@@ -906,14 +902,14 @@
           "type": "text",
           "label": "Business Fax Number",
           "placeholder": "(555) 123-4567",
-          "help_text": "Optional fax number for business correspondence",
+          "help_text": "Enter the fax number for your business (optional)",
           "required": false,
           "page": 3,
           "order": 55,
-          "group": "business_contact_info",
+          "group": "business_contact_information",
           "validation": {
             "max_length": 20,
-            "pattern": "^[\\d\\s()+-]*$"
+            "pattern": "^[0-9() +-]*$"
           }
         },
         {
@@ -922,7 +918,7 @@
           "type": "text",
           "label": "Business Website",
           "placeholder": "https://www.example.com",
-          "help_text": "Enter your business website URL (optional)",
+          "help_text": "Enter the website URL for the business (optional)",
           "required": false,
           "page": 3,
           "order": 56,
@@ -937,28 +933,28 @@
           "pdf_field_name": "owner1_name",
           "type": "text",
           "label": "Owner 1 Name",
-          "placeholder": "Enter full name",
-          "help_text": "Enter the full legal name of the primary business owner",
+          "placeholder": "Enter full legal name",
+          "help_text": "Enter the full legal name of the first business owner as it appears on official documents.",
           "required": true,
           "page": 3,
           "order": 57,
           "group": "business_ownership",
           "validation": {
-            "max_length": 100,
-            "pattern": "^[a-zA-Z\\s'-]+$"
+            "max_length": 200,
+            "pattern": "^[a-zA-Z\\s\\-\\.,']+$"
           }
         },
         {
           "field_id": "field_058",
           "pdf_field_name": "owner1_title",
           "type": "text",
-          "label": "Title",
-          "placeholder": "e.g., President, CEO, Managing Member",
-          "help_text": "Enter the title or role of Owner 1 within the organization (e.g., President, CEO, Partner, Member).",
+          "label": "Owner 1 Title",
+          "placeholder": "e.g., CEO, President, Managing Member",
+          "help_text": "Enter the title or role of the first owner with 20% or more ownership in the business",
           "required": true,
           "page": 3,
           "order": 58,
-          "group": "owner1_information",
+          "group": "ownership_information",
           "validation": {
             "max_length": 100
           }
@@ -967,15 +963,16 @@
           "field_id": "field_059",
           "pdf_field_name": "owner1_pct",
           "type": "text",
-          "label": "Ownership Percentage",
+          "label": "Owner 1 Percentage Owned",
           "placeholder": "e.g., 50",
-          "help_text": "Enter the percentage of ownership for this individual (0-100)",
+          "help_text": "Enter the percentage of ownership for Owner 1. Use whole numbers or decimals (e.g., 50 or 33.33).",
           "required": true,
           "page": 3,
           "order": 59,
-          "group": "owner1_details",
+          "group": "ownership_information",
           "validation": {
-            "pattern": "^\\d{1,3}(\\.\\d{1,2})?$",
+            "max_length": 6,
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0,
             "max_value": 100.0
           }
@@ -984,16 +981,16 @@
           "field_id": "field_060",
           "pdf_field_name": "owner1_ssn",
           "type": "text",
-          "label": "Social Security Number (Owner 1)",
+          "label": "Owner 1 Social Security Number",
           "placeholder": "XXX-XX-XXXX",
-          "help_text": "Enter the Social Security Number for the first owner. This information is required for tax reporting purposes.",
+          "help_text": "Enter the Social Security Number for the first owner. Format: XXX-XX-XXXX",
           "required": true,
           "page": 3,
           "order": 60,
           "group": "owner_information",
           "validation": {
             "max_length": 11,
-            "pattern": "^\\d{3}-\\d{2}-\\d{4}$|^\\d{9}$"
+            "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$"
           }
         },
         {
@@ -1001,27 +998,28 @@
           "pdf_field_name": "owner2_name",
           "type": "text",
           "label": "Owner 2 Name",
-          "placeholder": "Enter full name of second owner",
-          "help_text": "Provide the full legal name of the second business owner if applicable",
+          "placeholder": "Enter full legal name",
+          "help_text": "Enter the full legal name of the second business owner. If there is only one owner, leave this field blank.",
           "required": false,
           "page": 3,
           "order": 61,
-          "group": "Business Ownership",
+          "group": "business_ownership",
           "validation": {
-            "max_length": 100
+            "max_length": 100,
+            "pattern": "^[a-zA-Z\\s'-]+$"
           }
         },
         {
           "field_id": "field_062",
           "pdf_field_name": "owner2_title",
           "type": "text",
-          "label": "Title",
-          "placeholder": "e.g., CEO, President, Managing Member",
-          "help_text": "Enter the title or role of the second owner in the business",
+          "label": "Title (Owner 2)",
+          "placeholder": "e.g., CEO, President, Member",
+          "help_text": "Enter the title or role of the second owner with 20% or more ownership in the business.",
           "required": true,
           "page": 3,
           "order": 62,
-          "group": "owner2_information",
+          "group": "ownership_information",
           "validation": {
             "max_length": 100
           }
@@ -1031,16 +1029,16 @@
           "pdf_field_name": "owner2_pct",
           "type": "text",
           "label": "Owner 2 Percentage Owned",
-          "placeholder": "e.g., 25",
-          "help_text": "Enter the ownership percentage for Owner 2. Total ownership across all owners must equal 100%. Only include owners with 20% or more ownership.",
-          "required": true,
+          "placeholder": "e.g., 50",
+          "help_text": "Enter the percentage of ownership for the second owner. Must be a number between 0 and 100.",
+          "required": false,
           "page": 3,
           "order": 63,
-          "group": "owner2_information",
+          "group": "ownership_information",
           "validation": {
             "max_length": 6,
-            "pattern": "^\\d{1,3}(\\.\\d{1,2})?$",
-            "min_value": 20.0,
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
+            "min_value": 0.0,
             "max_value": 100.0
           }
         },
@@ -1048,9 +1046,9 @@
           "field_id": "field_064",
           "pdf_field_name": "owner2_ssn",
           "type": "text",
-          "label": "Owner 2 - Social Security Number",
+          "label": "Owner 2 Social Security Number",
           "placeholder": "XXX-XX-XXXX",
-          "help_text": "Enter the Social Security Number for the second owner. Required only if there is a second owner.",
+          "help_text": "Enter the Social Security Number for the second owner. Required if there is a second owner listed.",
           "required": false,
           "page": 3,
           "order": 64,
@@ -1066,26 +1064,27 @@
           "type": "text",
           "label": "Owner 3 Name",
           "placeholder": "Enter full name",
-          "help_text": "Full legal name of the third business owner (if applicable)",
+          "help_text": "Provide the full legal name of the third business owner. Only required if there are three or more owners.",
           "required": false,
           "page": 3,
           "order": 65,
-          "group": "business_ownership",
+          "group": "Business Ownership",
           "validation": {
-            "max_length": 100
+            "max_length": 100,
+            "pattern": "^[A-Za-z\\s'-]+$"
           }
         },
         {
           "field_id": "field_066",
           "pdf_field_name": "owner3_title",
           "type": "text",
-          "label": "Title",
-          "placeholder": "e.g., CEO, President, Managing Member",
-          "help_text": "Enter the professional title or role of Owner 3 in the business",
-          "required": true,
+          "label": "Owner 3 Title",
+          "placeholder": "e.g., President, CEO, Managing Member",
+          "help_text": "Enter the title or position of the third owner with 20% or more ownership in the business.",
+          "required": false,
           "page": 3,
           "order": 66,
-          "group": "owner3_information",
+          "group": "ownership_information",
           "validation": {
             "max_length": 100
           }
@@ -1094,16 +1093,17 @@
           "field_id": "field_067",
           "pdf_field_name": "owner3_pct",
           "type": "text",
-          "label": "Owner 3 Ownership Percentage",
-          "placeholder": "e.g., 25",
-          "help_text": "Enter the percentage of ownership for Owner 3. Only include owners with 20% or more ownership. All ownership percentages must total 100%.",
+          "label": "Owner 3 Percentage Owned",
+          "placeholder": "e.g., 25.5",
+          "help_text": "Enter the percentage of ownership for the third owner. Use decimals if needed (e.g., 33.33 for one-third ownership).",
           "required": false,
           "page": 3,
           "order": 67,
-          "group": "owner3_information",
+          "group": "ownership_information",
           "validation": {
+            "max_length": 6,
             "pattern": "^\\d{1,3}(\\.\\d{1,2})?$",
-            "min_value": 20.0,
+            "min_value": 0.0,
             "max_value": 100.0
           }
         },
@@ -1113,11 +1113,11 @@
           "type": "text",
           "label": "Owner 3 Social Security Number",
           "placeholder": "XXX-XX-XXXX",
-          "help_text": "Enter the Social Security Number for the third owner. Format: XXX-XX-XXXX",
+          "help_text": "Enter the Social Security Number for the third owner. Required if there is a third owner with ownership percentage.",
           "required": false,
           "page": 3,
           "order": 68,
-          "group": "owner3_information",
+          "group": "owner_3_information",
           "validation": {
             "max_length": 11,
             "pattern": "^\\d{3}-\\d{2}-\\d{4}$|^\\d{9}$"
@@ -1135,14 +1135,14 @@
           "pdf_field_name": "loan_amount_requested",
           "type": "text",
           "label": "Loan Amount Requested",
-          "placeholder": "$0.00",
-          "help_text": "Enter the total amount you wish to borrow. This should reflect the funding needed for the purpose selected above.",
+          "placeholder": "Enter amount in dollars (e.g., 50000)",
+          "help_text": "Specify the total dollar amount you are requesting for this loan. Interest rates: variable at +1.5% or fixed at 7.25% (subject to change).",
           "required": true,
           "page": 4,
           "order": 69,
-          "group": "loan_request",
+          "group": "loan_details",
           "validation": {
-            "pattern": "^\\$?[0-9]{1,3}(,[0-9]{3})*(\\.\\d{2})?$|^[0-9]+(\\.[0-9]{2})?$",
+            "pattern": "^[0-9]+\\.?[0-9]{0,2}$",
             "min_value": 0.0
           }
         },
@@ -1151,18 +1151,18 @@
           "pdf_field_name": "loan_purpose",
           "type": "checkbox",
           "label": "Purpose of Loan",
-          "help_text": "Select the primary reason you are applying for this business loan. Choose the option that best describes how you intend to use the funds.",
+          "help_text": "Select the primary purpose for which you are requesting this loan. You may select multiple options if applicable.",
           "required": true,
           "page": 4,
           "order": 70,
-          "group": "loan_purpose"
+          "group": "loan_details"
         },
         {
           "field_id": "field_071",
           "pdf_field_name": "loan_purpose",
           "type": "checkbox",
           "label": "Purpose of Loan",
-          "help_text": "Select the primary reason you are applying for this business loan. You may choose one or more options that apply.",
+          "help_text": "Select the primary reason you are applying for this business loan. You may select multiple options if applicable.",
           "required": true,
           "page": 4,
           "order": 71,
@@ -1173,7 +1173,7 @@
           "pdf_field_name": "loan_purpose",
           "type": "checkbox",
           "label": "Purpose of Loan",
-          "help_text": "Select the primary reason you are applying for this loan. Choose the option that best describes how you plan to use the funds.",
+          "help_text": "Select the primary purpose for which you are requesting this loan. Multiple selections may be allowed depending on your specific needs.",
           "required": true,
           "page": 4,
           "order": 72,
@@ -1182,7 +1182,7 @@
         {
           "field_id": "field_073",
           "pdf_field_name": "loan_purpose",
-          "type": "radio",
+          "type": "checkbox",
           "label": "Loan Purpose",
           "help_text": "Select the primary purpose for your loan request. Choose the option that best describes how you intend to use the funds.",
           "required": true,
@@ -1193,9 +1193,9 @@
         {
           "field_id": "field_074",
           "pdf_field_name": "loan_purpose",
-          "type": "checkbox",
+          "type": "radio",
           "label": "Loan Purpose",
-          "help_text": "Select the primary purpose for your loan. Choose 'Other' if none of the standard options apply and provide details.",
+          "help_text": "Select the primary purpose for which you will use the loan funds. Choose 'Other' if your purpose is not listed and provide details.",
           "required": true,
           "page": 4,
           "order": 74,
@@ -1206,7 +1206,7 @@
           "pdf_field_name": "loan_purpose",
           "type": "checkbox",
           "label": "Loan Purpose",
-          "help_text": "Select the primary purpose for this loan. If your purpose is not listed, select 'Other' and provide details.",
+          "help_text": "Select the primary reason you are applying for this loan. If your purpose is not listed, choose \"Other\" and provide details.",
           "required": true,
           "page": 4,
           "order": 75,
@@ -1221,14 +1221,14 @@
           "required": true,
           "page": 4,
           "order": 76,
-          "group": "loan_details"
+          "group": "loan_purpose"
         },
         {
           "field_id": "field_077",
           "pdf_field_name": "loan_purpose",
           "type": "checkbox",
           "label": "Loan Purpose",
-          "help_text": "Select the primary purpose for your loan. If your purpose isn't listed, choose \"Other\" and provide details in the text field below.",
+          "help_text": "Select the primary purpose for your loan. Common options include startup costs, inventory purchase, or other business needs.",
           "required": true,
           "page": 4,
           "order": 77,
@@ -1240,7 +1240,7 @@
           "type": "text",
           "label": "Other Loan Purpose",
           "placeholder": "Please specify the purpose of your loan",
-          "help_text": "If you selected 'Other' as your loan purpose, please provide details about how you intend to use the loan funds.",
+          "help_text": "If your loan purpose doesn't fit the predefined categories, please describe it here.",
           "required": false,
           "page": 4,
           "order": 78,
@@ -1254,8 +1254,8 @@
           "pdf_field_name": "loan_term_pref",
           "type": "radio",
           "label": "Preferred Loan Term",
-          "help_text": "Select your preferred loan repayment period. Short-term loans typically have higher monthly payments but lower total interest, while long-term loans have lower monthly payments but higher total interest.",
-          "required": false,
+          "help_text": "Select your preferred loan term duration. Choose the timeframe that best fits your repayment capabilities and business needs.",
+          "required": true,
           "page": 4,
           "order": 79,
           "group": "loan_preferences"
@@ -1265,7 +1265,7 @@
           "pdf_field_name": "loan_term_pref",
           "type": "radio",
           "label": "Preferred Loan Term",
-          "help_text": "Select your preferred loan term duration. Medium-term loans typically range from 1-5 years, while long-term loans extend from 5-10 years.",
+          "help_text": "Select your preferred loan repayment period. Choose between long-term (5-10 years), medium-term (1-5 years), or a revolving line of credit option.",
           "required": false,
           "page": 4,
           "order": 80,
@@ -1276,7 +1276,7 @@
           "pdf_field_name": "loan_term_pref",
           "type": "checkbox",
           "label": "Preferred Loan Term",
-          "help_text": "Select your preferred loan term length. This helps us tailor financing options to your needs.",
+          "help_text": "Select your preferred loan repayment period. Choose from short-term, long-term, or revolving credit options.",
           "required": false,
           "page": 4,
           "order": 81,
@@ -1285,20 +1285,20 @@
         {
           "field_id": "field_082",
           "pdf_field_name": "loan_term_pref",
-          "type": "radio",
-          "label": "Loan Term Preference",
-          "help_text": "Select your preferred loan term structure. Choose the option that best fits your financial needs and risk tolerance.",
+          "type": "checkbox",
+          "label": "Interest Rate Preference",
+          "help_text": "Select your preferred interest rate type for the loan. Choose Fixed Rate for consistent payments, Variable Rate for potentially lower initial rates, or No Preference to see all options.",
           "required": false,
           "page": 4,
           "order": 82,
-          "group": "loan_preferences"
+          "group": "loan_terms"
         },
         {
           "field_id": "field_083",
           "pdf_field_name": "loan_rate_pref",
-          "type": "checkbox",
+          "type": "radio",
           "label": "Interest Rate Preference",
-          "help_text": "Select your preferred interest rate type for this loan. Choose fixed rate for consistent payments or variable rate for potentially lower initial rates.",
+          "help_text": "Select your preferred interest rate type for this loan. Choose fixed for consistent payments or variable for potentially lower initial rates. Select 'No Preference' if you'd like to discuss options with a loan officer.",
           "required": false,
           "page": 4,
           "order": 83,
@@ -1307,24 +1307,24 @@
         {
           "field_id": "field_084",
           "pdf_field_name": "loan_rate_pref",
-          "type": "radio",
-          "label": "Interest Rate Preference",
-          "help_text": "Select your preferred interest rate type for this loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions. Choose 'No Preference' if you'd like guidance from your lender.",
+          "type": "checkbox",
+          "label": "No Preference",
+          "help_text": "Select if you have no preference between fixed and variable interest rates",
           "required": false,
           "page": 4,
           "order": 84,
-          "group": "loan_rate_preference"
+          "group": "interest_rate_preference"
         },
         {
           "field_id": "field_085",
           "pdf_field_name": "loan_rate_pref",
           "type": "checkbox",
           "label": "Interest Rate Preference",
-          "help_text": "Select your preferred interest rate type for this loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions. Choose \"No Preference\" if you'd like guidance from your loan officer.",
+          "help_text": "Select your preferred interest rate type for the loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions.",
           "required": false,
           "page": 4,
           "order": 85,
-          "group": "loan_rate_preference"
+          "group": "loan_preferences"
         },
         {
           "field_id": "field_086",
@@ -1352,7 +1352,7 @@
           "type": "text",
           "label": "Checking Accounts",
           "placeholder": "0.00",
-          "help_text": "Enter the total current balance of all your checking accounts in dollars",
+          "help_text": "Enter the total value of all checking accounts in dollars",
           "required": true,
           "page": 5,
           "order": 87,
@@ -1368,7 +1368,7 @@
           "type": "text",
           "label": "Savings / Money Market",
           "placeholder": "0.00",
-          "help_text": "Enter the total current balance of all savings and money market accounts in dollars",
+          "help_text": "Enter the total current value of your savings and money market accounts in dollars. Enter 0 if none.",
           "required": true,
           "page": 5,
           "order": 88,
@@ -1384,11 +1384,11 @@
           "type": "text",
           "label": "Investment Assets",
           "placeholder": "Enter total value of investments",
-          "help_text": "Include the total dollar value of your stocks, bonds, mutual funds, and other investment accounts (exclude retirement accounts listed separately).",
+          "help_text": "Include the total dollar value of retirement accounts (401k, IRA), stocks, bonds, mutual funds, and other investment holdings.",
           "required": true,
           "page": 5,
           "order": 89,
-          "group": "assets",
+          "group": "financial_assets",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
@@ -1414,10 +1414,10 @@
           "field_id": "field_091",
           "pdf_field_name": "asset_real_estate",
           "type": "text",
-          "label": "Real Estate (market value)",
-          "placeholder": "Enter market value",
-          "help_text": "Enter the current market value of all real estate properties you own, including your primary residence, investment properties, and land.",
-          "required": true,
+          "label": "Real Estate (Market Value)",
+          "placeholder": "0.00",
+          "help_text": "Enter the current market value of any real estate you own (homes, land, investment properties, etc.)",
+          "required": false,
           "page": 5,
           "order": 91,
           "group": "assets",
@@ -1431,8 +1431,8 @@
           "pdf_field_name": "asset_vehicles",
           "type": "text",
           "label": "Vehicles (Market Value)",
-          "placeholder": "0.00",
-          "help_text": "Enter the current market value of all vehicles you own (cars, motorcycles, boats, RVs, etc.). If none, enter 0.",
+          "placeholder": "Enter total market value of all vehicles",
+          "help_text": "Enter the current market value of all vehicles you own, including cars, motorcycles, boats, RVs, etc. Use fair market value, not purchase price.",
           "required": true,
           "page": 5,
           "order": 92,
@@ -1448,13 +1448,13 @@
           "type": "text",
           "label": "Other Assets",
           "placeholder": "Enter dollar amount",
-          "help_text": "Enter the total value of any other assets not listed above, such as investments, retirement accounts, savings, or personal property.",
+          "help_text": "Enter the total value of any additional assets not listed above (e.g., investments, savings accounts, jewelry, collectibles, etc.)",
           "required": false,
           "page": 5,
           "order": 93,
           "group": "assets",
           "validation": {
-            "pattern": "^\\d*\\.?\\d{0,2}$",
+            "pattern": "^[0-9]*\\.?[0-9]{0,2}$",
             "min_value": 0.0
           }
         },
@@ -1464,7 +1464,7 @@
           "type": "text",
           "label": "Total Assets",
           "placeholder": "0.00",
-          "help_text": "Enter the total value of all your assets in dollars. This typically includes cash, real estate, vehicles, investments, and other valuable property.",
+          "help_text": "Enter the total value of all your assets in dollars. This should include the sum of vehicles, real estate, investments, and other assets.",
           "required": true,
           "page": 5,
           "order": 94,
@@ -1480,7 +1480,7 @@
           "type": "text",
           "label": "Mortgage Balance",
           "placeholder": "0.00",
-          "help_text": "Enter the current outstanding balance on your mortgage(s). If you have multiple mortgages, enter the total combined balance.",
+          "help_text": "Enter the total outstanding balance on your mortgage(s). Include primary residence and any investment property mortgages.",
           "required": true,
           "page": 5,
           "order": 95,
@@ -1495,9 +1495,9 @@
           "pdf_field_name": "liability_auto_loans",
           "type": "text",
           "label": "Auto Loans",
-          "placeholder": "Enter total auto loan balance",
-          "help_text": "Enter the current outstanding balance of all auto loans (car, truck, motorcycle, etc.)",
-          "required": true,
+          "placeholder": "0.00",
+          "help_text": "Enter the total outstanding balance of all auto loans (car, truck, motorcycle, etc.)",
+          "required": false,
           "page": 5,
           "order": 96,
           "group": "liabilities",
@@ -1512,7 +1512,7 @@
           "type": "text",
           "label": "Credit Card Balances",
           "placeholder": "0.00",
-          "help_text": "Enter the total outstanding balance across all credit cards",
+          "help_text": "Enter the total outstanding balance on all credit cards",
           "required": true,
           "page": 5,
           "order": 97,
@@ -1527,8 +1527,8 @@
           "pdf_field_name": "liability_student_loans",
           "type": "text",
           "label": "Student Loans",
-          "placeholder": "Enter total student loan balance",
-          "help_text": "Enter the total outstanding balance of all student loans in dollars. If you have no student loans, enter 0.",
+          "placeholder": "0.00",
+          "help_text": "Enter the total outstanding balance of all student loans. Enter 0 if you have no student loans.",
           "required": true,
           "page": 5,
           "order": 98,
@@ -1543,14 +1543,14 @@
           "pdf_field_name": "liability_other",
           "type": "text",
           "label": "Other Liabilities",
-          "placeholder": "Enter amount in dollars",
-          "help_text": "Enter any additional liabilities not covered in other categories (e.g., personal loans, tax debts, medical bills)",
+          "placeholder": "0.00",
+          "help_text": "Enter any additional liabilities not listed above (e.g., personal loans, medical debt, tax obligations)",
           "required": false,
           "page": 5,
           "order": 99,
           "group": "liabilities",
           "validation": {
-            "pattern": "^\\d*\\.?\\d{0,2}$",
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
           }
         },
@@ -1560,7 +1560,7 @@
           "type": "text",
           "label": "Total Liabilities",
           "placeholder": "0.00",
-          "help_text": "Enter the sum of all your liabilities including credit card balances, student loans, and other debts. This should equal the total of all liability items listed above.",
+          "help_text": "Enter the total sum of all your liabilities including credit card balances, student loans, and other debts",
           "required": true,
           "page": 5,
           "order": 100,
@@ -1598,23 +1598,23 @@
           "type": "text",
           "label": "Gross Revenue",
           "placeholder": "Enter gross revenue amount",
-          "help_text": "Enter the total gross revenue for your business from the most recent fiscal year. This is the total income before deducting cost of goods sold or operating expenses.",
+          "help_text": "Enter the total gross revenue for your most recent fiscal year in dollars. Do not include dollar signs or commas.",
           "required": true,
           "page": 6,
           "order": 102,
-          "group": "business_financial_summary",
+          "group": "revenue_income",
           "validation": {
-            "pattern": "^\\d+(\\.\\d{1,2})?$",
+            "pattern": "^[0-9]+(\\.[0-9]{1,2})?$",
             "min_value": 0.0
           }
         },
         {
           "field_id": "field_103",
           "pdf_field_name": "biz_fiscal_year_end",
-          "type": "text",
+          "type": "date",
           "label": "Fiscal Year End",
           "placeholder": "MM/YYYY",
-          "help_text": "Enter the month and year when your business's fiscal year ends (e.g., 12/2023 for December 2023)",
+          "help_text": "Enter the month and year your business fiscal year ends (e.g., 12/2023 for December 2023)",
           "required": true,
           "page": 6,
           "order": 103,
@@ -1631,10 +1631,10 @@
           "label": "Cost of Goods Sold",
           "placeholder": "0.00",
           "help_text": "Enter the total cost of goods sold (COGS) for the most recent fiscal year. This includes direct costs attributable to the production of goods sold by your business.",
-          "required": false,
+          "required": true,
           "page": 6,
           "order": 104,
-          "group": "revenue_and_income",
+          "group": "revenue_income_fiscal_year",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
@@ -1645,14 +1645,14 @@
           "pdf_field_name": "biz_gross_profit",
           "type": "text",
           "label": "Gross Profit",
-          "placeholder": "e.g., 250000",
-          "help_text": "Enter the gross profit amount in dollars. Gross profit is calculated as total revenue minus cost of goods sold. For startups, provide projected figures clearly marked as estimates.",
+          "placeholder": "Enter gross profit amount",
+          "help_text": "Enter the gross profit in dollars from your most recent income statement. Gross profit is calculated as revenue minus cost of goods sold.",
           "required": true,
           "page": 6,
           "order": 105,
-          "group": "financial_metrics",
+          "group": "financial_information",
           "validation": {
-            "pattern": "^[0-9]+\\.?[0-9]{0,2}$",
+            "pattern": "^\\$?\\d{1,3}(,\\d{3})*(\\.\\d{2})?$",
             "min_value": 0.0
           }
         },
@@ -1662,11 +1662,11 @@
           "type": "text",
           "label": "Total Operating Expenses",
           "placeholder": "0.00",
-          "help_text": "Enter the total operating expenses for your most recent fiscal year, excluding cost of goods sold. Operating expenses typically include rent, utilities, salaries, marketing, insurance, and other business overhead costs.",
+          "help_text": "Enter the total operating expenses for your most recent fiscal year. This includes all costs of running the business excluding cost of goods sold (e.g., rent, utilities, salaries, marketing, insurance).",
           "required": true,
           "page": 6,
           "order": 106,
-          "group": "revenue_and_income",
+          "group": "revenue_income_fiscal_year",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
@@ -1676,15 +1676,15 @@
           "field_id": "field_107",
           "pdf_field_name": "biz_net_income",
           "type": "text",
-          "label": "Net Income",
+          "label": "Business Net Income",
           "placeholder": "Enter net income amount",
-          "help_text": "Enter your business's net income in dollars. If you are a startup, provide projected figures clearly marked as estimates.",
+          "help_text": "Enter your business's net income in dollars from your most recent income statement. If the business has been operating for more than one year, provide the most recent fiscal year's net income.",
           "required": true,
           "page": 6,
           "order": 107,
-          "group": "business_financial_metrics",
+          "group": "financial_information",
           "validation": {
-            "pattern": "^[0-9]+\\.?[0-9]*$",
+            "pattern": "^[0-9]*\\.?[0-9]+$",
             "min_value": 0.0
           }
         },
@@ -1694,13 +1694,13 @@
           "type": "text",
           "label": "Prior Year Gross Revenue",
           "placeholder": "e.g., 250000",
-          "help_text": "Enter your business's total gross revenue from the previous year for comparison purposes. This should be the total income before deducting expenses.",
+          "help_text": "Enter the total gross revenue your business generated in the prior year (before expenses). This is used for year-over-year comparison.",
           "required": true,
           "page": 6,
           "order": 108,
           "group": "business_banking_information",
           "validation": {
-            "pattern": "^[0-9]+\\.?[0-9]{0,2}$",
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
           }
         },
@@ -1709,14 +1709,14 @@
           "pdf_field_name": "biz_prev_net_income",
           "type": "text",
           "label": "Prior Year Net Income",
-          "placeholder": "Enter amount in dollars",
-          "help_text": "Enter the net income from the previous fiscal year. This should match the net income reported on your prior year's financial statements.",
+          "placeholder": "0.00",
+          "help_text": "Enter the net income from the previous fiscal year in dollars",
           "required": true,
           "page": 6,
           "order": 109,
           "group": "business_financial_information",
           "validation": {
-            "pattern": "^[0-9]*\\.?[0-9]{0,2}$",
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
           }
         },
@@ -1725,12 +1725,12 @@
           "pdf_field_name": "biz_bank_name",
           "type": "text",
           "label": "Primary Business Bank",
-          "placeholder": "Enter your bank name (e.g., Chase, Wells Fargo)",
-          "help_text": "Enter the name of the financial institution where you maintain your primary business banking account.",
+          "placeholder": "Enter your bank name (e.g., First National Bank)",
+          "help_text": "Enter the name of the financial institution where your business maintains its primary banking relationship.",
           "required": true,
           "page": 6,
           "order": 110,
-          "group": "business_banking",
+          "group": "business_banking_information",
           "validation": {
             "max_length": 100
           }
@@ -1741,7 +1741,7 @@
           "type": "text",
           "label": "Business Bank Account Number",
           "placeholder": "Enter your business bank account number",
-          "help_text": "Provide the account number for your primary business banking account",
+          "help_text": "Provide the account number for your primary business banking account at First National Bank (if you are an existing customer)",
           "required": true,
           "page": 6,
           "order": 111,
@@ -1756,14 +1756,14 @@
           "pdf_field_name": "biz_bank_avg_balance",
           "type": "text",
           "label": "Average Monthly Balance",
-          "placeholder": "Enter average monthly balance",
-          "help_text": "Enter the average monthly balance of your business bank account in dollars",
+          "placeholder": "Enter amount in dollars",
+          "help_text": "Enter the average monthly balance for your business bank account in dollars (do not include cents or currency symbols)",
           "required": true,
           "page": 6,
           "order": 112,
-          "group": "business_financial_information",
+          "group": "business_banking_information",
           "validation": {
-            "pattern": "^\\d+(\\.\\d{1,2})?$",
+            "pattern": "^[0-9]+$",
             "min_value": 0.0
           }
         },
@@ -1771,12 +1771,12 @@
           "field_id": "field_113",
           "pdf_field_name": "biz_existing_customer",
           "type": "checkbox",
-          "label": "I am an existing First National Bank customer",
-          "help_text": "Check this box if you currently have an account with First National Bank. If yes, please provide your account number in the field below.",
+          "label": "Existing First National Bank Customer",
+          "help_text": "Check this box if you already have an account with First National Bank. If yes, please provide your account number in the field below.",
           "required": false,
           "page": 6,
           "order": 113,
-          "group": "existing_customer_info"
+          "group": "customer_status"
         },
         {
           "field_id": "field_114",
@@ -1784,14 +1784,14 @@
           "type": "text",
           "label": "Existing Account Number",
           "placeholder": "Enter your account number",
-          "help_text": "If you are an existing First National Bank customer, please provide your account number.",
+          "help_text": "If you are an existing First National Bank customer, please provide your account number",
           "required": false,
           "page": 6,
           "order": 114,
-          "group": "existing_customer_information",
+          "group": "existing_customer_info",
           "validation": {
             "max_length": 20,
-            "pattern": "^[0-9]{6,20}$"
+            "pattern": "^[0-9-]*$"
           }
         },
         {
@@ -1799,14 +1799,14 @@
           "pdf_field_name": "debt1_creditor",
           "type": "text",
           "label": "Creditor 1 - Name",
-          "placeholder": "Enter creditor name",
-          "help_text": "Enter the name of the financial institution or creditor for your first outstanding business debt",
+          "placeholder": "Enter creditor or lender name",
+          "help_text": "Provide the name of the financial institution, lender, or creditor for your first outstanding business debt (e.g., bank name, credit card company, vendor)",
           "required": true,
           "page": 6,
           "order": 115,
           "group": "outstanding_business_debts",
           "validation": {
-            "max_length": 100
+            "max_length": 200
           }
         },
         {
@@ -1831,7 +1831,7 @@
           "type": "text",
           "label": "Monthly Payment",
           "placeholder": "0.00",
-          "help_text": "Enter the monthly payment amount for this debt in dollars",
+          "help_text": "Enter the monthly payment amount in dollars for this debt",
           "required": false,
           "page": 6,
           "order": 117,
@@ -1846,14 +1846,15 @@
           "pdf_field_name": "debt1_rate",
           "type": "text",
           "label": "Interest Rate (%)",
-          "placeholder": "e.g., 4.5",
+          "placeholder": "e.g., 5.75",
           "help_text": "Enter the annual interest rate percentage for this debt",
           "required": false,
           "page": 6,
           "order": 118,
-          "group": "debt1",
+          "group": "debt_1",
           "validation": {
-            "pattern": "^\\d+(\\.\\d{1,3})?$",
+            "max_length": 6,
+            "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0,
             "max_value": 100.0
           }
@@ -1864,13 +1865,13 @@
           "type": "text",
           "label": "Creditor 2 Name",
           "placeholder": "Enter creditor name",
-          "help_text": "Enter the name of the second creditor for outstanding business debts (e.g., bank name, lender, or financial institution)",
+          "help_text": "Enter the name of the second creditor for outstanding business debts, loans, or lines of credit.",
           "required": false,
           "page": 6,
           "order": 119,
           "group": "outstanding_business_debts",
           "validation": {
-            "max_length": 255
+            "max_length": 200
           }
         },
         {
@@ -1879,7 +1880,7 @@
           "type": "text",
           "label": "Balance",
           "placeholder": "0.00",
-          "help_text": "Enter the current outstanding balance for this debt or obligation in dollars",
+          "help_text": "Enter the current outstanding balance of this debt obligation in dollars",
           "required": true,
           "page": 6,
           "order": 120,
@@ -1893,13 +1894,13 @@
           "field_id": "field_121",
           "pdf_field_name": "debt2_payment",
           "type": "text",
-          "label": "Monthly Payment",
+          "label": "Monthly Payment (Debt 2)",
           "placeholder": "0.00",
-          "help_text": "Enter the monthly payment amount for this debt in dollars",
+          "help_text": "Enter the monthly payment amount in dollars for your second debt or liability.",
           "required": false,
           "page": 6,
           "order": 121,
-          "group": "debt2",
+          "group": "debt_information",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,2})?$",
             "min_value": 0.0
@@ -1909,13 +1910,13 @@
           "field_id": "field_122",
           "pdf_field_name": "debt2_rate",
           "type": "text",
-          "label": "Debt 2 - Interest Rate",
+          "label": "Interest Rate (%)",
           "placeholder": "e.g., 5.25",
-          "help_text": "Enter the annual interest rate percentage for this debt (without the % symbol)",
+          "help_text": "Enter the annual interest rate percentage for this debt",
           "required": false,
           "page": 6,
           "order": 122,
-          "group": "debt_information",
+          "group": "debt2",
           "validation": {
             "pattern": "^\\d+(\\.\\d{1,3})?$",
             "min_value": 0.0,
@@ -1927,8 +1928,8 @@
           "pdf_field_name": "debt3_creditor",
           "type": "text",
           "label": "Creditor 3 Name",
-          "placeholder": "Enter creditor name",
-          "help_text": "Enter the name of the third creditor for outstanding business debts (e.g., bank name, lender, or financial institution)",
+          "placeholder": "Enter creditor or lender name",
+          "help_text": "Enter the name of the third creditor, lender, or financial institution for outstanding business debt",
           "required": false,
           "page": 6,
           "order": 123,
@@ -1943,8 +1944,8 @@
           "type": "text",
           "label": "Balance",
           "placeholder": "0.00",
-          "help_text": "Enter the current outstanding balance for this debt obligation in dollars",
-          "required": true,
+          "help_text": "Enter the current outstanding balance for this debt in dollars",
+          "required": false,
           "page": 6,
           "order": 124,
           "group": "debt3",
@@ -1959,7 +1960,7 @@
           "type": "text",
           "label": "Monthly Payment",
           "placeholder": "0.00",
-          "help_text": "Enter the monthly payment amount for this debt in dollars",
+          "help_text": "Enter the monthly payment amount in dollars for this debt",
           "required": false,
           "page": 6,
           "order": 125,
@@ -1974,14 +1975,13 @@
           "pdf_field_name": "debt3_rate",
           "type": "text",
           "label": "Interest Rate",
-          "placeholder": "0.00",
-          "help_text": "Enter the annual interest rate as a percentage (e.g., 5.5 for 5.5%)",
+          "placeholder": "e.g., 5.25",
+          "help_text": "Enter the annual interest rate as a percentage (e.g., 5.25 for 5.25%)",
           "required": false,
           "page": 6,
           "order": 126,
           "group": "debt3",
           "validation": {
-            "max_length": 6,
             "pattern": "^\\d+(\\.\\d{1,3})?$",
             "min_value": 0.0,
             "max_value": 100.0
@@ -1997,9 +1997,9 @@
         {
           "field_id": "field_127",
           "pdf_field_name": "collateral_type",
-          "type": "checkbox",
+          "type": "radio",
           "label": "Primary Collateral Type",
-          "help_text": "Select the primary type of collateral being offered to secure the loan. Choose the category that best represents the main asset being pledged.",
+          "help_text": "Select the primary type of collateral being used to secure the loan. Choose the option that best represents the main asset backing this financing.",
           "required": true,
           "page": 7,
           "order": 127,
@@ -2010,7 +2010,7 @@
           "pdf_field_name": "collateral_type",
           "type": "radio",
           "label": "Primary Collateral Type",
-          "help_text": "Select the primary type of collateral being used to secure the loan. Common types include inventory, equipment/machinery, accounts receivable, or real estate.",
+          "help_text": "Select the primary type of collateral being used to secure the loan. Common options include inventory, accounts receivable, equipment/machinery, or residential real estate.",
           "required": true,
           "page": 7,
           "order": 128,
@@ -2021,7 +2021,7 @@
           "pdf_field_name": "collateral_type",
           "type": "checkbox",
           "label": "Primary Collateral Type",
-          "help_text": "Select the primary type of collateral being used to secure this loan. Multiple types may be selected if applicable.",
+          "help_text": "Select the primary type of collateral being offered to secure the loan. Common options include inventory, equipment/machinery, accounts receivable, or vehicles/fleet.",
           "required": true,
           "page": 7,
           "order": 129,
@@ -2031,9 +2031,9 @@
           "field_id": "field_130",
           "pdf_field_name": "collateral_type",
           "type": "checkbox",
-          "label": "Type of Collateral",
-          "help_text": "Select one or more types of collateral you are offering to secure the loan. Common options include inventory, accounts receivable, vehicles/fleet, or cash savings/CDs.",
-          "required": true,
+          "label": "Collateral Type",
+          "help_text": "Select the type(s) of collateral you are offering to secure the loan. Multiple selections may be allowed.",
+          "required": false,
           "page": 7,
           "order": 130,
           "group": "collateral_information"
@@ -2043,8 +2043,8 @@
           "pdf_field_name": "collateral_type",
           "type": "checkbox",
           "label": "Collateral Type",
-          "help_text": "Select the type of collateral you are offering to secure the loan. Multiple selections may be possible.",
-          "required": false,
+          "help_text": "Select the type(s) of collateral you are offering to secure the loan. Multiple selections may be allowed.",
+          "required": true,
           "page": 7,
           "order": 131,
           "group": "collateral_information"
@@ -2054,8 +2054,8 @@
           "pdf_field_name": "collateral_type",
           "type": "checkbox",
           "label": "Collateral Type",
-          "help_text": "Select the type of collateral you are offering to secure this loan. Choose \"None / Unsecured Request\" if you are not providing collateral.",
-          "required": false,
+          "help_text": "Select the type of collateral you will provide to secure this loan. Choose \"None / Unsecured Request\" if you are not providing collateral.",
+          "required": true,
           "page": 7,
           "order": 132,
           "group": "collateral_information"
@@ -2063,9 +2063,9 @@
         {
           "field_id": "field_133",
           "pdf_field_name": "collateral_type",
-          "type": "checkbox",
+          "type": "radio",
           "label": "Collateral Type",
-          "help_text": "Select the type of collateral being offered to secure this loan. Choose 'None / Unsecured Request' if no collateral is available.",
+          "help_text": "Select the type of collateral you are offering to secure the loan. Choose \"None / Unsecured Request\" if no collateral is being provided.",
           "required": true,
           "page": 7,
           "order": 133,
@@ -2074,10 +2074,10 @@
         {
           "field_id": "field_134",
           "pdf_field_name": "collateral_type",
-          "type": "checkbox",
+          "type": "radio",
           "label": "Collateral Type",
-          "help_text": "Select the type of collateral you are offering to secure this loan. If you are not offering collateral, select \"None / Unsecured Request\".",
-          "required": false,
+          "help_text": "Select the type of collateral you are offering to secure this loan. Choose 'None / Unsecured Request' if you are not providing collateral.",
+          "required": true,
           "page": 7,
           "order": 134,
           "group": "collateral_information"
@@ -2087,8 +2087,8 @@
           "pdf_field_name": "collateral_description",
           "type": "text",
           "label": "Collateral Description",
-          "placeholder": "Describe the collateral (e.g., property address, vehicle details, equipment)",
-          "help_text": "Provide a detailed description of the collateral being used to secure the loan, including identifying information such as addresses, VIN numbers, serial numbers, or other relevant details.",
+          "placeholder": "Describe the collateral (e.g., real estate, equipment, inventory, vehicles)",
+          "help_text": "Provide a detailed description of the assets being used as collateral for this loan or financing arrangement.",
           "required": true,
           "page": 7,
           "order": 135,
@@ -2103,7 +2103,7 @@
           "type": "text",
           "label": "Estimated Value",
           "placeholder": "Enter dollar amount",
-          "help_text": "Enter the estimated current market value of the collateral in US dollars",
+          "help_text": "Enter the estimated current market value of the collateral in US dollars. This helps assess the security for the loan request.",
           "required": true,
           "page": 7,
           "order": 136,
@@ -2117,9 +2117,9 @@
           "field_id": "field_137",
           "pdf_field_name": "collateral_current_liens",
           "type": "text",
-          "label": "Existing Liens ($)",
+          "label": "Existing Liens on Collateral",
           "placeholder": "0.00",
-          "help_text": "Enter the total dollar amount of existing liens or encumbrances currently on the collateral",
+          "help_text": "Enter the total dollar amount of any existing liens or encumbrances currently on the collateral being offered for this loan.",
           "required": true,
           "page": 7,
           "order": 137,
@@ -2134,8 +2134,8 @@
           "pdf_field_name": "collateral_location",
           "type": "text",
           "label": "Collateral Location",
-          "placeholder": "Enter the physical address or location of the collateral",
-          "help_text": "Provide the complete physical address where the collateral (asset being used to secure the loan) is located. This helps the lender verify and access the collateral if necessary.",
+          "placeholder": "Enter the address where collateral is located",
+          "help_text": "Provide the physical address where the collateral (assets securing this loan) is located. This may be different from your business address.",
           "required": true,
           "page": 7,
           "order": 138,
@@ -2148,9 +2148,9 @@
           "field_id": "field_139",
           "pdf_field_name": "collateral2_description",
           "type": "text",
-          "label": "Collateral Description (Item 2)",
-          "placeholder": "Describe the collateral (e.g., equipment, real estate, inventory)",
-          "help_text": "Provide a detailed description of the second collateral item being offered to secure the loan, including type, condition, and any identifying information.",
+          "label": "Collateral Description (Second Item)",
+          "placeholder": "e.g., Equipment, real estate, vehicles, inventory",
+          "help_text": "Describe the second collateral item being offered to secure the loan, including type and identifying details.",
           "required": false,
           "page": 7,
           "order": 139,
@@ -2165,7 +2165,7 @@
           "type": "text",
           "label": "Estimated Value",
           "placeholder": "Enter dollar amount",
-          "help_text": "Provide the estimated current market value of the additional collateral in US dollars",
+          "help_text": "Enter the estimated dollar value of the additional collateral being offered (if any).",
           "required": false,
           "page": 7,
           "order": 140,
@@ -2179,16 +2179,15 @@
           "field_id": "field_141",
           "pdf_field_name": "collateral2_liens",
           "type": "text",
-          "label": "Existing Liens ($)",
-          "placeholder": "0.00",
-          "help_text": "Enter the total dollar amount of any existing liens on this collateral (e.g., mortgages, loans, or other claims)",
+          "label": "Existing Liens (Collateral 2)",
+          "placeholder": "Enter dollar amount",
+          "help_text": "Enter the total dollar amount of existing liens on the second collateral item. This represents any outstanding debts or claims already secured by this asset.",
           "required": false,
           "page": 7,
           "order": 141,
           "group": "collateral_details",
           "validation": {
-            "max_length": 15,
-            "pattern": "^\\d+(\\.\\d{1,2})?$",
+            "pattern": "^\\$?\\d{1,3}(,?\\d{3})*(\\.\\d{2})?$|^\\d+(\\.\\d{2})?$",
             "min_value": 0.0
           }
         },
@@ -2197,7 +2196,7 @@
           "pdf_field_name": "guarantee_primary",
           "type": "checkbox",
           "label": "Primary Applicant Personal Guarantee",
-          "help_text": "Check this box if the co-applicant agrees to provide a personal guarantee for this application",
+          "help_text": "Check this box if the primary applicant agrees to provide a personal guarantee for this application",
           "required": false,
           "page": 7,
           "order": 142,
@@ -2207,8 +2206,8 @@
           "field_id": "field_143",
           "pdf_field_name": "guarantee_co",
           "type": "checkbox",
-          "label": "Other Guarantor",
-          "help_text": "Check this box if there is an additional guarantor beyond the personal guarantee. A separate guarantee form must be attached.",
+          "label": "Co-applicant Personal Guarantee",
+          "help_text": "Check this box if the co-applicant agrees to provide a personal guarantee for this application",
           "required": false,
           "page": 7,
           "order": 143,
@@ -2219,7 +2218,7 @@
           "pdf_field_name": "guarantee_other",
           "type": "checkbox",
           "label": "Other Guarantor",
-          "help_text": "Select if you have an additional guarantor not listed above. You must attach a separate guarantee form for this guarantor.",
+          "help_text": "Select if a guarantor other than the primary applicant or co-applicant will provide a personal guarantee. A separate guarantee form must be attached.",
           "required": false,
           "page": 7,
           "order": 144,
@@ -2236,8 +2235,8 @@
           "field_id": "field_145",
           "pdf_field_name": "decl_bankruptcy_yes",
           "type": "checkbox",
-          "label": "Have you declared bankruptcy in the past 7 years?",
-          "help_text": "If you answer 'Yes', you must provide a written explanation on a separate sheet and attach it to this application. False statements may result in denial of the application and may constitute a federal crime.",
+          "label": "Have you declared bankruptcy?",
+          "help_text": "Indicate whether you have ever filed for bankruptcy. This information may be required for credit or financial assessments.",
           "required": true,
           "page": 8,
           "order": 145,
@@ -2247,8 +2246,8 @@
           "field_id": "field_146",
           "pdf_field_name": "decl_bankruptcy_no",
           "type": "checkbox",
-          "label": "No, I have not declared bankruptcy",
-          "help_text": "Check this box if you have NOT filed for bankruptcy in the past 7 years",
+          "label": "Have you declared bankruptcy?",
+          "help_text": "Select 'No' if you have not declared bankruptcy in the past",
           "required": true,
           "page": 8,
           "order": 146,
@@ -2258,19 +2257,19 @@
           "field_id": "field_147",
           "pdf_field_name": "decl_foreclosure_yes",
           "type": "checkbox",
-          "label": "Have you had property foreclosed upon or given title or deed in lieu thereof in the last 7 years?",
-          "help_text": "Select 'Yes' if either the primary applicant or co-applicant has experienced foreclosure or given a deed in lieu of foreclosure within the past 7 years. If you answer 'Yes', you must provide a written explanation on a separate sheet.",
+          "label": "Are you currently subject to foreclosure proceedings?",
+          "help_text": "Indicate whether you are currently subject to any foreclosure proceedings on any property.",
           "required": true,
           "page": 8,
           "order": 147,
-          "group": "declarations"
+          "group": "decl_foreclosure"
         },
         {
           "field_id": "field_148",
           "pdf_field_name": "decl_foreclosure_no",
           "type": "checkbox",
-          "label": "No foreclosure proceedings",
-          "help_text": "Check this box if there are no foreclosure proceedings against you or your property",
+          "label": "No Foreclosure",
+          "help_text": "Select if you are NOT involved in a foreclosure proceeding",
           "required": true,
           "page": 8,
           "order": 148,
@@ -2281,128 +2280,128 @@
           "pdf_field_name": "decl_lawsuit_yes",
           "type": "checkbox",
           "label": "Are you currently involved in any lawsuit?",
-          "help_text": "Indicate whether you are currently a party to any pending lawsuit or legal proceeding.",
+          "help_text": "Indicate whether you are currently a party to any pending lawsuit or legal action",
           "required": true,
           "page": 8,
           "order": 149,
-          "group": "declaration_lawsuit"
+          "group": "decl_lawsuit"
         },
         {
           "field_id": "field_150",
           "pdf_field_name": "decl_lawsuit_no",
-          "type": "checkbox",
-          "label": "No pending lawsuits",
-          "help_text": "Check this box if you have no pending lawsuits or legal actions",
-          "required": false,
+          "type": "radio",
+          "label": "Have you been involved in any lawsuits?",
+          "help_text": "Indicate whether you have been involved in any lawsuits. Select 'No' if you have not been involved in any legal proceedings.",
+          "required": true,
           "page": 8,
           "order": 150,
-          "group": "decl_lawsuit"
+          "group": "declaration_questions"
         },
         {
           "field_id": "field_151",
           "pdf_field_name": "decl_tax_lien_yes",
           "type": "checkbox",
-          "label": "Are you presently subject to a tax lien?",
-          "help_text": "Indicate if you are currently subject to any federal, state, or local tax liens. A tax lien is a legal claim by a government entity against your property when you fail to pay tax debt.",
+          "label": "Do you have any tax liens?",
+          "help_text": "Indicate whether you currently have any outstanding tax liens filed against you or your property.",
           "required": true,
           "page": 8,
           "order": 151,
-          "group": "declaration_tax_lien"
+          "group": "decl_tax_lien"
         },
         {
           "field_id": "field_152",
           "pdf_field_name": "decl_tax_lien_no",
           "type": "checkbox",
-          "label": "No tax liens",
-          "help_text": "Check this box to indicate you do not have any outstanding federal tax liens or other tax debt.",
+          "label": "Are there any outstanding judgments against you?",
+          "help_text": "Indicate if you currently have any unsatisfied judgments or court-ordered debts. Select \"No\" if you do not have any outstanding judgments.",
           "required": true,
           "page": 8,
           "order": 152,
-          "group": "declaration_tax_liens"
+          "group": "declarations"
         },
         {
           "field_id": "field_153",
           "pdf_field_name": "decl_delinquent_yes",
           "type": "checkbox",
-          "label": "Currently Delinquent on Any Federal Debt - Yes",
-          "help_text": "Check this box if you are currently delinquent on any federal debt (e.g., federal taxes, student loans, child support, or other obligations). If you are not delinquent, leave this unchecked.",
-          "required": false,
+          "label": "Are you currently delinquent on any federal debt?",
+          "help_text": "Indicate whether you have any overdue federal debt obligations, such as tax debts, student loans, or other government debts.",
+          "required": true,
           "page": 8,
           "order": 153,
-          "group": "delinquent_federal_debt_declaration"
+          "group": "delinquent_debt_status"
         },
         {
           "field_id": "field_154",
           "pdf_field_name": "decl_delinquent_no",
           "type": "checkbox",
-          "label": "No, I am not delinquent on any federal debt",
-          "help_text": "Check this box if you are NOT currently delinquent on any federal debt obligations",
-          "required": false,
+          "label": "Are you currently delinquent on any Federal debt?",
+          "help_text": "Select 'No' if you are not currently delinquent on any Federal debt obligations (such as student loans, tax debt, or other government debts).",
+          "required": true,
           "page": 8,
           "order": 154,
-          "group": "delinquent_debt_declaration"
+          "group": "declaration_delinquent_debt"
         },
         {
           "field_id": "field_155",
           "pdf_field_name": "decl_felony_yes",
           "type": "checkbox",
-          "label": "Yes, I have been convicted of a felony",
-          "help_text": "Check this box if you have been convicted of a felony. This information may be required for background check or licensing purposes.",
+          "label": "Have you ever been convicted of a felony?",
+          "help_text": "Select 'Yes' if you have ever been convicted of a felony offense. This may affect your application.",
           "required": true,
           "page": 8,
           "order": 155,
-          "group": "felony_declaration"
+          "group": "criminal_history_declaration"
         },
         {
           "field_id": "field_156",
           "pdf_field_name": "decl_felony_no",
           "type": "checkbox",
-          "label": "No - I have not been convicted of a felony",
-          "help_text": "Check this box if you have NOT been convicted of a felony. This is typically a required disclosure for official applications.",
+          "label": "Have you ever been convicted of a felony?",
+          "help_text": "Select 'No' if you have never been convicted of a felony offense. A felony conviction may affect your eligibility.",
           "required": true,
           "page": 8,
           "order": 156,
-          "group": "felony_declaration"
+          "group": "decl_felony"
         },
         {
           "field_id": "field_157",
           "pdf_field_name": "decl_obligation_yes",
           "type": "checkbox",
-          "label": "Yes, I have an obligation to file a return",
-          "help_text": "Select this option if you are required to file a tax return based on your income, filing status, or other circumstances.",
-          "required": false,
+          "label": "Do you have any legal obligations?",
+          "help_text": "Select 'Yes' if you have any legal obligations or declarations to report.",
+          "required": true,
           "page": 8,
           "order": 157,
-          "group": "declaration_obligation"
+          "group": "declaration_obligations"
         },
         {
           "field_id": "field_158",
           "pdf_field_name": "decl_obligation_no",
           "type": "checkbox",
-          "label": "No",
-          "help_text": "Select if you are not declaring an obligation",
+          "label": "I am not subject to backup withholding",
+          "help_text": "Check this box if you are not subject to backup withholding because: (a) you are exempt from backup withholding, or (b) you have not been notified by the IRS that you are subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified you that you are no longer subject to backup withholding.",
           "required": false,
           "page": 8,
           "order": 158,
-          "group": "decl_obligation"
+          "group": "tax_withholding_declarations"
         },
         {
           "field_id": "field_159",
           "pdf_field_name": "decl_other_apps_yes",
           "type": "checkbox",
-          "label": "Other Applications - Yes",
-          "help_text": "Check this box if you have other applications pending or approved with immigration authorities",
-          "required": false,
+          "label": "Other Pending or Filed Applications",
+          "help_text": "Indicate whether you have any other applications pending or filed with immigration authorities",
+          "required": true,
           "page": 8,
           "order": 159,
-          "group": "other_applications_declaration"
+          "group": "declaration_other_applications"
         },
         {
           "field_id": "field_160",
           "pdf_field_name": "decl_other_apps_no",
           "type": "checkbox",
-          "label": "No other applications filed",
-          "help_text": "Check this box if you have not filed any other applications or petitions for this beneficiary",
+          "label": "No, I have not filed other applications for this invention",
+          "help_text": "Select this option if you have not filed any other patent or invention applications related to this invention (domestic or foreign)",
           "required": false,
           "page": 8,
           "order": 160,
@@ -2412,42 +2411,42 @@
           "field_id": "field_161",
           "pdf_field_name": "decl_government_yes",
           "type": "checkbox",
-          "label": "Are you employed by or have you worked for the government?",
-          "help_text": "Check this box if you are currently employed by or have previously worked for any government entity (federal, state, or local).",
+          "label": "Are you employed by or have you ever been employed by the U.S. Government?",
+          "help_text": "Indicate whether you are currently employed by or have ever been employed by any U.S. Government agency or department.",
           "required": true,
           "page": 8,
           "order": 161,
-          "group": "government_employment"
+          "group": "decl_government"
         },
         {
           "field_id": "field_162",
           "pdf_field_name": "decl_government_no",
           "type": "checkbox",
-          "label": "No - Not a Government Official",
-          "help_text": "Check this box if you are NOT a government official or public servant. This is typically part of a declaration or disclosure requirement.",
+          "label": "Are you a government employee?",
+          "help_text": "Indicate whether you are currently employed by a government entity",
           "required": true,
           "page": 8,
           "order": 162,
-          "group": "government_official_declaration"
+          "group": "declaration_questions"
         },
         {
           "field_id": "field_163",
           "pdf_field_name": "decl_related_party_yes",
           "type": "checkbox",
-          "label": "Yes, this transaction involves a related party",
-          "help_text": "Check this box if the transaction involves a related party (e.g., family member, business associate, or entity in which you have an ownership interest)",
-          "required": false,
+          "label": "Are you a related party?",
+          "help_text": "Indicate whether you are a related party to the transaction or entity. Related parties typically include family members, business associates, or entities with common ownership or control.",
+          "required": true,
           "page": 8,
           "order": 163,
-          "group": "related_party_declaration"
+          "group": "decl_related_party"
         },
         {
           "field_id": "field_164",
           "pdf_field_name": "decl_related_party_no",
-          "type": "checkbox",
-          "label": "No, I am not a related party",
-          "help_text": "Check this box if you are not a related party to the organization or transaction. This is typically part of a declaration section where you must indicate your relationship status.",
-          "required": false,
+          "type": "radio",
+          "label": "Related Party: No",
+          "help_text": "Select this option if there is no related party involved in this declaration",
+          "required": true,
           "page": 8,
           "order": 164,
           "group": "related_party_declaration"
@@ -2456,15 +2455,15 @@
           "field_id": "field_165",
           "pdf_field_name": "decl_explanation",
           "type": "text",
-          "label": "Explanation",
-          "placeholder": "Provide additional explanation or details here...",
-          "help_text": "Use this field to provide any additional explanations, clarifications, or details related to your declaration.",
+          "label": "Explanation of Relationship",
+          "placeholder": "Please describe your relationship with the bank employee or director",
+          "help_text": "If you answered 'Yes' to having a relationship with a First National Bank employee or director, please provide details about the nature of this relationship.",
           "required": false,
           "page": 8,
           "order": 165,
-          "group": "declaration",
+          "group": "declarations",
           "validation": {
-            "max_length": 5000
+            "max_length": 500
           }
         }
       ]
@@ -2478,19 +2477,19 @@
           "field_id": "field_166",
           "pdf_field_name": "doc_tax_personal_1",
           "type": "checkbox",
-          "label": "Personal Tax Documents",
-          "help_text": "Check this box if you are providing personal tax documents",
+          "label": "Personal tax returns — prior year",
+          "help_text": "Check if you are submitting personal tax returns from the prior year",
           "required": false,
           "page": 9,
           "order": 166,
-          "group": "document_tax_types"
+          "group": "tax_documents"
         },
         {
           "field_id": "field_167",
           "pdf_field_name": "doc_tax_personal_2",
           "type": "checkbox",
-          "label": "Personal Tax Document",
-          "help_text": "Check this box if you are submitting personal tax documentation",
+          "label": "Personal tax returns — prior year",
+          "help_text": "Check this box if you are providing your personal tax returns from the prior year",
           "required": false,
           "page": 9,
           "order": 167,
@@ -2500,41 +2499,41 @@
           "field_id": "field_168",
           "pdf_field_name": "doc_tax_business_1",
           "type": "checkbox",
-          "label": "Business Tax Document",
-          "help_text": "Check this box if you need to submit business tax documents",
+          "label": "Business Tax Returns — Prior Year",
+          "help_text": "Check if you are providing business tax returns from the prior year",
           "required": false,
           "page": 9,
           "order": 168,
-          "group": "tax_documents"
+          "group": "document_checklist"
         },
         {
           "field_id": "field_169",
           "pdf_field_name": "doc_tax_business_2",
           "type": "checkbox",
-          "label": "Business Tax Document",
-          "help_text": "Check if you are providing business tax documentation",
+          "label": "Business tax returns — prior year",
+          "help_text": "Check this box if you are providing your business tax returns from the prior year",
           "required": false,
           "page": 9,
           "order": 169,
-          "group": "tax_documents"
+          "group": "document_checklist"
         },
         {
           "field_id": "field_170",
           "pdf_field_name": "doc_financial_stmt",
           "type": "checkbox",
-          "label": "Financial Statement",
-          "help_text": "Check this box if you are submitting a financial statement as part of your documentation",
+          "label": "Business bank statements — last 6 months",
+          "help_text": "Please provide your business bank statements covering the most recent 6-month period.",
           "required": false,
           "page": 9,
           "order": 170,
-          "group": "document_checklist"
+          "group": "financial_documents"
         },
         {
           "field_id": "field_171",
           "pdf_field_name": "doc_bank_statements",
           "type": "checkbox",
-          "label": "Bank Statements",
-          "help_text": "Check this box if you are submitting bank statements as supporting documentation",
+          "label": "Business bank statements — last 6 months",
+          "help_text": "Please provide your business bank statements from the last 6 months. This helps verify your business's financial history and cash flow.",
           "required": false,
           "page": 9,
           "order": 171,
@@ -2544,20 +2543,20 @@
           "field_id": "field_172",
           "pdf_field_name": "doc_personal_bank",
           "type": "checkbox",
-          "label": "Personal Bank Statements",
-          "help_text": "Check this box if you are providing personal bank statements as supporting documentation",
+          "label": "Personal Bank Statements (Last 3 Months)",
+          "help_text": "Check this box to confirm you will provide your personal bank statements for the last 3 months. This may be required to verify financial stability and cash flow.",
           "required": false,
           "page": 9,
           "order": 172,
-          "group": "documentation"
+          "group": "supporting_documents"
         },
         {
           "field_id": "field_173",
           "pdf_field_name": "doc_business_plan",
           "type": "checkbox",
           "label": "Business Plan",
-          "help_text": "Check this box if you are including a business plan with your application",
-          "required": false,
+          "help_text": "Required for startup businesses. Please attach a comprehensive business plan document.",
+          "required": true,
           "page": 9,
           "order": 173,
           "group": "required_documents"
@@ -2566,90 +2565,90 @@
           "field_id": "field_174",
           "pdf_field_name": "doc_articles",
           "type": "checkbox",
-          "label": "Articles of Incorporation/Organization",
-          "help_text": "Check this box if you are submitting articles of incorporation or organization with this form",
-          "required": false,
+          "label": "Articles of Incorporation / Organization",
+          "help_text": "Check this box to confirm you will provide your Articles of Incorporation (for corporations) or Articles of Organization (for LLCs)",
+          "required": true,
           "page": 9,
           "order": 174,
-          "group": "supporting_documents"
+          "group": "business_documentation"
         },
         {
           "field_id": "field_175",
           "pdf_field_name": "doc_licenses",
           "type": "checkbox",
-          "label": "Document Licenses",
-          "help_text": "Select if you have professional licenses or certifications to document",
-          "required": false,
+          "label": "Business Licenses and Permits",
+          "help_text": "Check this box to confirm you have attached copies of all relevant business licenses and permits required to operate your business.",
+          "required": true,
           "page": 9,
           "order": 175,
-          "group": "document_types"
+          "group": "business_documentation"
         },
         {
           "field_id": "field_176",
           "pdf_field_name": "doc_lease",
           "type": "checkbox",
-          "label": "Lease Agreement",
-          "help_text": "Check if you are providing a lease agreement as supporting documentation",
+          "label": "Commercial Lease Agreement",
+          "help_text": "Check this box if you have a commercial lease agreement to submit. This document is only required if your business operates from a leased commercial property.",
           "required": false,
           "page": 9,
           "order": 176,
-          "group": "supporting_documents"
+          "group": "business_documentation"
         },
         {
           "field_id": "field_177",
           "pdf_field_name": "doc_id_copy",
           "type": "checkbox",
-          "label": "Copy of Document ID",
-          "help_text": "Check this box if you are providing a copy of a document ID or identification",
+          "label": "Copy of Government-Issued Photo ID",
+          "help_text": "Check this box if you are including a copy of a government-issued photo ID (e.g., driver's license, passport) with your application.",
           "required": false,
           "page": 9,
           "order": 177,
-          "group": "document_attachments"
+          "group": "required_documents"
         },
         {
           "field_id": "field_178",
           "pdf_field_name": "doc_insurance",
           "type": "checkbox",
-          "label": "Insurance Documents",
-          "help_text": "Check this box if you are including insurance documentation with your submission",
+          "label": "Proof of Business Insurance",
+          "help_text": "Check this box to indicate that proof of business insurance documentation is included with this application",
           "required": false,
           "page": 9,
           "order": 178,
-          "group": "supporting_documents"
+          "group": "documentation_checklist"
         },
         {
           "field_id": "field_179",
           "pdf_field_name": "doc_ap_ar",
           "type": "checkbox",
-          "label": "Accounts Payable/Accounts Receivable Documentation",
-          "help_text": "Check this box if you are submitting accounts payable or accounts receivable documentation",
+          "label": "Accounts Receivable/Payable Aging Report",
+          "help_text": "Check if you are providing an accounts receivable or accounts payable aging report as part of your additional documentation",
           "required": false,
           "page": 9,
           "order": 179,
-          "group": "document_types"
+          "group": "additional_information"
         },
         {
           "field_id": "field_180",
           "pdf_field_name": "doc_collateral_docs",
           "type": "checkbox",
-          "label": "Collateral Documents",
-          "help_text": "Check if collateral documentation is included or required",
+          "label": "Collateral Documentation",
+          "help_text": "Check if you are providing collateral documentation such as titles, deeds, or appraisals to support your application",
           "required": false,
           "page": 9,
           "order": 180,
-          "group": "documentation"
+          "group": "additional_information"
         },
         {
           "field_id": "field_181",
           "pdf_field_name": "additional_info",
           "type": "text",
           "label": "Additional Information",
-          "placeholder": "Provide any business achievements, contracts, growth projections, or circumstances you'd like to explain...",
-          "help_text": "Use this space to highlight any information that may strengthen your application, such as recent business achievements, existing contracts, projected growth, or any special circumstances that should be considered during evaluation.",
+          "placeholder": "Describe any business achievements, contracts, growth projections, or circumstances relevant to your application...",
+          "help_text": "Use this space to provide any additional information that may help us evaluate your application, including business achievements, contracts in hand, growth projections, or any circumstances you would like to explain.",
           "required": false,
           "page": 9,
           "order": 181,
-          "group": "supplementary_information",
+          "group": "application_details",
           "validation": {
             "max_length": 2000
           }
@@ -2658,8 +2657,8 @@
           "field_id": "field_182",
           "pdf_field_name": "hear_about_us",
           "type": "dropdown",
-          "label": "How did you hear about our lending program?",
-          "help_text": "Please select the source through which you learned about our lending services. If you were referred by someone, you'll be asked to provide their name in the next field.",
+          "label": "How did you hear about us?",
+          "help_text": "Please select how you learned about our lending program. If you were referred by someone, you'll be asked to provide their name in the next field.",
           "required": true,
           "page": 9,
           "order": 182,
@@ -2681,7 +2680,7 @@
           "type": "text",
           "label": "Referral Name",
           "placeholder": "Enter the name of the person who referred you",
-          "help_text": "If you were referred to our lending program by someone, please provide their name here.",
+          "help_text": "Please provide the full name of the person or organization that referred you to our lending program",
           "required": false,
           "page": 9,
           "order": 183,
@@ -2702,48 +2701,48 @@
           "pdf_field_name": "agree_terms",
           "type": "checkbox",
           "label": "I agree to the terms and conditions",
-          "help_text": "You must agree to the terms and conditions to proceed with this application",
+          "help_text": "You must agree to the terms and conditions to proceed with your application",
           "required": true,
           "page": 10,
           "order": 184,
-          "group": "signature_section"
+          "group": "authorization_and_consent"
         },
         {
           "field_id": "field_185",
           "pdf_field_name": "agree_credit_check",
           "type": "checkbox",
-          "label": "I agree to a credit check",
-          "help_text": "By checking this box, you authorize us to perform a credit check as part of your application review",
+          "label": "I/We authorize credit report inquiries",
+          "help_text": "By checking this box, you authorize the lender to perform credit report inquiries as part of the application process.",
           "required": true,
           "page": 10,
           "order": 185,
-          "group": "application_consent"
+          "group": "application_authorization"
         },
         {
           "field_id": "field_186",
           "pdf_field_name": "agree_electronic",
           "type": "checkbox",
-          "label": "I agree to electronic signature",
-          "help_text": "By checking this box, you consent to sign this document electronically",
-          "required": true,
+          "label": "I agree to use electronic signature",
+          "help_text": "Check this box to consent to signing this document electronically instead of with a handwritten signature",
+          "required": false,
           "page": 10,
           "order": 186,
-          "group": "signature_consent"
+          "group": "signature_section"
         },
         {
           "field_id": "field_187",
           "pdf_field_name": "print_name_primary",
           "type": "text",
-          "label": "Print Name (Primary Applicant)",
+          "label": "Primary Applicant Printed Name",
           "placeholder": "Enter your full legal name",
-          "help_text": "Please print your full legal name as it appears on official documents. This should match the signature above.",
+          "help_text": "Please print your full legal name as it appears on your identification. This should match the signature provided.",
           "required": true,
           "page": 10,
           "order": 187,
-          "group": "primary_applicant_signature_section",
+          "group": "primary_applicant_signature_block",
           "validation": {
             "max_length": 100,
-            "pattern": "^[a-zA-Z\\s\\-\\.]+$"
+            "pattern": "^[a-zA-Z\\s\\-'.]+$"
           }
         },
         {
@@ -2751,7 +2750,7 @@
           "pdf_field_name": "sig_primary_applicant",
           "type": "signature",
           "label": "Primary Applicant Signature",
-          "help_text": "By signing, you authorize credit report inquiries and confirm the accuracy of the information provided in this application.",
+          "help_text": "Please sign to authorize credit report inquiries and confirm you have read and agree to the terms and conditions",
           "required": true,
           "page": 10,
           "order": 188,
@@ -2763,11 +2762,11 @@
           "type": "date",
           "label": "Date Signed",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the date when the primary applicant signed this document",
+          "help_text": "Enter the date when you signed this document",
           "required": true,
           "page": 10,
           "order": 189,
-          "group": "primary_applicant_signature",
+          "group": "primary_signature_section",
           "validation": {
             "max_length": 10,
             "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
@@ -2777,16 +2776,16 @@
           "field_id": "field_190",
           "pdf_field_name": "print_name_co",
           "type": "text",
-          "label": "Co-Applicant/Guarantor Printed Name",
-          "placeholder": "Print your full legal name",
-          "help_text": "Enter the full printed name of the co-applicant or guarantor. This should match the signature provided above.",
+          "label": "Co-Applicant / Guarantor Printed Name",
+          "placeholder": "Enter full legal name",
+          "help_text": "Print your full legal name as the co-applicant or guarantor. This should match your signature above.",
           "required": true,
           "page": 10,
           "order": 190,
-          "group": "co_applicant_signature_block",
+          "group": "co_applicant_signature_section",
           "validation": {
             "max_length": 100,
-            "pattern": "^[A-Za-z\\s'-]+$"
+            "pattern": "^[A-Za-z\\s\\-\\']+$"
           }
         },
         {
@@ -2794,7 +2793,7 @@
           "pdf_field_name": "sig_co_applicant",
           "type": "signature",
           "label": "Co-Applicant / Guarantor Signature",
-          "help_text": "Sign here if you are a co-applicant or guarantor on this loan application. This field is only required if there is a co-applicant or guarantor.",
+          "help_text": "Signature of the co-applicant or guarantor, if applicable. This field should only be completed if there is a co-applicant or guarantor on the loan application.",
           "required": false,
           "page": 10,
           "order": 191,
@@ -2804,13 +2803,13 @@
           "field_id": "field_192",
           "pdf_field_name": "date_signed_co",
           "type": "date",
-          "label": "Date Signed",
+          "label": "Co-Signer Date Signed",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the date when you signed this document",
+          "help_text": "Enter the date when the co-signer signed this document",
           "required": true,
           "page": 10,
           "order": 192,
-          "group": "co_applicant_signature",
+          "group": "co_signer_signature",
           "validation": {
             "max_length": 10,
             "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
@@ -2822,14 +2821,13 @@
           "type": "text",
           "label": "Loan Officer Name",
           "placeholder": "Enter loan officer's full name",
-          "help_text": "For bank use only. This section must be completed by the assigned loan officer.",
+          "help_text": "For bank use only. The name of the loan officer processing this application.",
           "required": true,
           "page": 10,
           "order": 193,
-          "group": "bank_officer_section",
+          "group": "bank_internal_use",
           "validation": {
-            "max_length": 100,
-            "pattern": "^[A-Za-z\\s.'-]+$"
+            "max_length": 100
           }
         },
         {
@@ -2838,11 +2836,11 @@
           "type": "text",
           "label": "Officer ID",
           "placeholder": "Enter officer identification number",
-          "help_text": "Enter the unique identification number assigned to the loan officer processing this application.",
+          "help_text": "This field is for internal use only. Loan officers should enter their unique identification number.",
           "required": true,
           "page": 10,
           "order": 194,
-          "group": "loan_officer_information",
+          "group": "bank_internal_use",
           "validation": {
             "max_length": 20,
             "pattern": "^[A-Z0-9-]+$"
@@ -2854,8 +2852,8 @@
           "type": "text",
           "label": "Bank Branch",
           "placeholder": "Enter branch name or number",
-          "help_text": "Provide the specific branch location or branch number where your account is held",
-          "required": false,
+          "help_text": "Enter the name or branch code of your bank branch (e.g., \"Main Street Branch\" or \"001234\")",
+          "required": true,
           "page": 10,
           "order": 195,
           "group": "banking_information",
@@ -2876,37 +2874,35 @@
           "type": "date",
           "label": "Date Received",
           "placeholder": "MM/DD/YYYY",
-          "help_text": "Enter the date the bank received the application",
+          "help_text": "Enter the date when the bank received the application",
           "required": true,
           "page": 11,
           "order": 196,
-          "group": "application_processing",
-          "validation": {
-            "max_length": 10,
-            "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
-          }
+          "group": "application_tracking",
+          "validation": {}
         },
         {
           "field_id": "field_197",
           "pdf_field_name": "bank_application_id",
           "type": "text",
           "label": "Application Number",
-          "placeholder": "Enter application number",
-          "help_text": "Unique identifier assigned to this bank application",
+          "placeholder": "e.g., APP-2024-001234",
+          "help_text": "Enter the unique application number assigned to this bank application",
           "required": true,
           "page": 11,
           "order": 197,
-          "group": "application_tracking",
+          "group": "application_details",
           "validation": {
-            "max_length": 50
+            "max_length": 50,
+            "pattern": "^[A-Z0-9-]+$"
           }
         },
         {
           "field_id": "field_198",
           "pdf_field_name": "bank_status",
           "type": "dropdown",
-          "label": "Application Status",
-          "help_text": "Select the current status of the bank application. This indicates where the application is in the review process.",
+          "label": "Bank Application Status",
+          "help_text": "Select the current status of the bank application. This will be used to track the application through the review process.",
           "required": true,
           "page": 11,
           "order": 198,
@@ -2925,16 +2921,16 @@
         {
           "field_id": "field_199",
           "pdf_field_name": "bank_notes",
-          "type": "text",
-          "label": "Bank Notes",
-          "placeholder": "Enter any additional notes or comments about your bank account",
-          "help_text": "Use this field to record any special instructions, account details, or other relevant information about your banking arrangements",
+          "type": "date",
+          "label": "Bank Notes Date",
+          "placeholder": "MM/DD/YYYY",
+          "help_text": "Enter the date for any bank-related notes or observations",
           "required": false,
           "page": 11,
           "order": 199,
-          "group": "banking_information",
+          "group": "bank_information",
           "validation": {
-            "max_length": 500
+            "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$"
           }
         }
       ]
@@ -2943,7 +2939,7 @@
   "metadata": {
     "source_pdf": "test_form.pdf",
     "pages": 11,
-    "extracted_at": "2026-02-15T05:41:20.096666Z",
+    "extracted_at": "2026-02-15T08:55:54.409243Z",
     "failed_fields": 0
   }
 }

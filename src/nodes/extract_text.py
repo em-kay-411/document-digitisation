@@ -1,8 +1,10 @@
-"""Document text extraction using Docling."""
+"""Document text extraction using PyMuPDF."""
 
 from __future__ import annotations
 
 import logging
+
+import fitz
 
 from src.models import BBox, TextElement
 from src.state import GraphState
@@ -11,84 +13,71 @@ logger = logging.getLogger(__name__)
 
 
 def extract_text_node(state: GraphState) -> dict:
-    """LangGraph node: extract text elements with positions from the PDF using Docling."""
+    """LangGraph node: extract text elements with positions from the PDF using PyMuPDF."""
     pdf_path = state.pdf_path
-    logger.info("Extracting text elements from %s via Docling", pdf_path)
+    logger.info("Extracting text elements from %s via PyMuPDF", pdf_path)
 
     text_elements: list[TextElement] = []
 
-    try:
-        from docling.document_converter import DocumentConverter
+    doc = fitz.open(pdf_path)
+    for page_idx, page in enumerate(doc):
+        page_height = page.rect.height
+        data = page.get_text("dict")
 
-        converter = DocumentConverter()
-        result = converter.convert(pdf_path)
-        doc = result.document
-
-        # iterate_items() returns (item, level) tuples
-        for item, level in doc.iterate_items():
-            text = ""
-            if hasattr(item, "text"):
-                text = item.text or ""
-            elif hasattr(item, "content"):
-                text = str(item.content or "")
-
-            if not text.strip():
+        # Collect all font sizes on the page to infer heading levels
+        font_sizes: list[float] = []
+        for block in data["blocks"]:
+            if block["type"] != 0:  # skip image blocks
                 continue
+            for line in block["lines"]:
+                for span in line["spans"]:
+                    if span["text"].strip():
+                        font_sizes.append(span["size"])
 
-            bbox = None
-            page = 1
+        for block in data["blocks"]:
+            if block["type"] != 0:
+                continue
+            for line in block["lines"]:
+                for span in line["spans"]:
+                    text = span["text"].strip()
+                    if not text:
+                        continue
 
-            # Extract provenance / bounding box info
-            prov_list = getattr(item, "prov", None)
-            if prov_list and len(prov_list) > 0:
-                prov = prov_list[0]
-                page = getattr(prov, "page_no", 1) or 1
+                    x0, y0, x1, y1 = span["bbox"]
 
-                prov_bbox = getattr(prov, "bbox", None)
-                if prov_bbox is not None:
-                    # Docling bbox has l, t, r, b attributes
+                    # Convert from top-left origin (PyMuPDF) to bottom-left origin
+                    # to match extract_fields.py coordinate system
                     bbox = BBox(
-                        l=getattr(prov_bbox, "l", 0.0),
-                        t=getattr(prov_bbox, "t", 0.0),
-                        r=getattr(prov_bbox, "r", 0.0),
-                        b=getattr(prov_bbox, "b", 0.0),
+                        l=x0,
+                        t=page_height - y0,
+                        r=x1,
+                        b=page_height - y1,
                     )
 
-            text_elements.append(
-                TextElement(
-                    text=text.strip(),
-                    page=page,
-                    bbox=bbox,
-                    level=level,
-                )
-            )
+                    level = _infer_level(span["size"], font_sizes)
 
-        logger.info("Extracted %d text elements", len(text_elements))
+                    text_elements.append(
+                        TextElement(
+                            text=text,
+                            page=page_idx + 1,
+                            bbox=bbox,
+                            level=level,
+                        )
+                    )
 
-    except ImportError:
-        logger.warning(
-            "Docling not available. Falling back to pypdf text extraction."
-        )
-        text_elements = _fallback_extract_text(pdf_path)
-    except Exception as e:
-        logger.warning("Docling extraction failed: %s. Falling back to pypdf.", e)
-        text_elements = _fallback_extract_text(pdf_path)
-
+    doc.close()
+    logger.info("Extracted %d text elements", len(text_elements))
     return {"text_elements": text_elements}
 
 
-def _fallback_extract_text(pdf_path: str) -> list[TextElement]:
-    """Simple fallback: extract text per page using pypdf (no bbox info)."""
-    from pypdf import PdfReader
-
-    elements: list[TextElement] = []
-    reader = PdfReader(pdf_path)
-    for page_idx, page in enumerate(reader.pages):
-        text = page.extract_text() or ""
-        for line in text.split("\n"):
-            line = line.strip()
-            if line:
-                elements.append(
-                    TextElement(text=line, page=page_idx + 1, bbox=None, level=0)
-                )
-    return elements
+def _infer_level(size: float, all_sizes: list[float]) -> int:
+    """Infer a heading level from font size. Larger fonts get lower level numbers."""
+    if not all_sizes:
+        return 0
+    max_size = max(all_sizes)
+    min_size = min(all_sizes)
+    if max_size == min_size:
+        return 0
+    # Normalize: largest font → level 0, smallest → level 5
+    ratio = (max_size - size) / (max_size - min_size)
+    return min(int(ratio * 5), 5)

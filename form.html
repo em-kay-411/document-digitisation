@@ -250,48 +250,48 @@ input[type="radio"] {
     <h2 class="section-heading">Page 1</h2>
     <div class="field">
     <label class="field-label" for="field_001">First Name <span class="req">*</span></label>
-    <input type="text" id="field_001" name="field_001" placeholder="Enter your first name" maxlength="50" pattern="^[a-zA-Z\s&#39;-]+$" required>
-    <p class="help-text">Enter the primary applicant&#39;s legal first name as it appears on official documents</p>
+    <input type="text" id="field_001" name="field_001" placeholder="Enter your first name" maxlength="100" pattern="^[a-zA-Z\s&#39;-]+$" required>
+    <p class="help-text">Enter your legal first name as it appears on official documents</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_002">Middle Name</label>
-    <input type="text" id="field_002" name="field_002" placeholder="Middle Name" maxlength="50" pattern="^[a-zA-Z\s&#39;-]*$">
-    <p class="help-text">Enter your middle name as it appears on your government-issued identification. Leave blank if you don&#39;t have a middle name.</p>
+    <input type="text" id="field_002" name="field_002" placeholder="Enter middle name" maxlength="50" pattern="^[a-zA-Z\s&#39;-]*$">
+    <p class="help-text">Enter your middle name exactly as it appears on your government-issued identification. Leave blank if you don&#39;t have a middle name.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_003">Last Name <span class="req">*</span></label>
-    <input type="text" id="field_003" name="field_003" placeholder="Enter last name" maxlength="100" pattern="^[A-Za-z\s&#39;-]+$" required>
-    <p class="help-text">Enter your legal last name exactly as it appears on your government-issued identification</p>
+    <input type="text" id="field_003" name="field_003" placeholder="Enter your last name" maxlength="100" pattern="^[A-Za-z\s&#39;-]+$" required>
+    <p class="help-text">Provide your legal last name exactly as it appears on your government-issued identification</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_004">Suffix</label>
-    <input type="text" id="field_004" name="field_004" placeholder="Jr., Sr., III, etc." maxlength="10">
-    <p class="help-text">Optional name suffix (e.g., Jr., Sr., II, III, IV, Esq.)</p>
+    <input type="text" id="field_004" name="field_004" placeholder="e.g., Jr., Sr., III" maxlength="10">
+    <p class="help-text">Optional name suffix (Jr., Sr., II, III, etc.)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_005">Social Security Number <span class="req">*</span></label>
-    <input type="text" id="field_005" name="field_005" placeholder="###-##-####" maxlength="11" pattern="^\d{3}-?\d{2}-?\d{4}$" required>
-    <p class="help-text">Enter your 9-digit Social Security Number. This information is required for identity verification purposes.</p>
+    <input type="text" id="field_005" name="field_005" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-?\d{2}-?\d{4}$" required>
+    <p class="help-text">Enter your 9-digit Social Security Number. Required for primary applicant identification.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_006">Date of Birth <span class="req">*</span></label>
     <input type="date" id="field_006" name="field_006" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter your date of birth as it appears on your government-issued identification</p>
+    <p class="help-text">Enter your date of birth exactly as it appears on your government-issued identification</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_007">Email Address <span class="req">*</span></label>
-    <input type="text" id="field_007" name="field_007" placeholder="example@email.com" maxlength="255" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
-    <p class="help-text">Enter a valid email address where we can reach you</p>
+    <input type="text" id="field_007" name="field_007" placeholder="example@email.com" maxlength="254" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+    <p class="help-text">Enter your email address for application correspondence and notifications</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_008">Primary Phone <span class="req">*</span></label>
-    <input type="text" id="field_008" name="field_008" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\+\.]+$" required>
+    <input type="text" id="field_008" name="field_008" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\-\(\)\+]+$" required>
     <p class="help-text">Enter your primary contact phone number</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_009">Alternate Phone Number</label>
-    <input type="text" id="field_009" name="field_009" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\.\+]+$">
-    <p class="help-text">Optional secondary contact number for the applicant</p>
+    <input type="text" id="field_009" name="field_009" placeholder="(555) 123-4567" maxlength="20" pattern="^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
+    <p class="help-text">Provide an alternate phone number where you can be reached if needed</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_010">Government ID Type <span class="req">*</span></label>
@@ -303,7 +303,7 @@ input[type="radio"] {
 <div class="field">
     <label class="field-label" for="field_011">ID Number <span class="req">*</span></label>
     <input type="text" id="field_011" name="field_011" placeholder="Enter your government ID number" maxlength="50" pattern="^[A-Za-z0-9-]+$" required>
-    <p class="help-text">Enter the identification number from your selected government-issued ID document</p>
+    <p class="help-text">Enter the identification number from the government-issued ID you selected above</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_012">Issuing State <span class="req">*</span></label>
@@ -313,31 +313,31 @@ input[type="radio"] {
     <p class="help-text">Select the state that issued your identification document</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_013">ID Expiration Date <span class="req">*</span></label>
+    <label class="field-label" for="field_013">Expiration Date <span class="req">*</span></label>
     <input type="date" id="field_013" name="field_013" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter the expiration date shown on your identification document</p>
+    <p class="help-text">Enter the expiration date from your identification document</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_014">Street Address <span class="req">*</span></label>
     <input type="text" id="field_014" name="field_014" placeholder="123 Main Street" maxlength="100" required>
-    <p class="help-text">Enter your street address (line 1)</p>
+    <p class="help-text">Enter the first line of your street address</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_015">Apartment/Unit/Suite</label>
-    <input type="text" id="field_015" name="field_015" placeholder="Apt 2B, Unit 5, Suite 100, etc." maxlength="100">
-    <p class="help-text">Optional: Enter your apartment, unit, or suite number if applicable</p>
+    <label class="field-label" for="field_015">Address Line 2</label>
+    <input type="text" id="field_015" name="field_015" placeholder="Apt, Suite, Unit, Building, Floor, etc. (optional)" maxlength="100">
+    <p class="help-text">Enter apartment number, suite, unit, or other secondary address information if applicable</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_016">City <span class="req">*</span></label>
-    <input type="text" id="field_016" name="field_016" placeholder="Enter city" maxlength="100" pattern="^[a-zA-Z\s\-&#39;.]+$" required>
-    <p class="help-text">Enter the city of your current address</p>
+    <input type="text" id="field_016" name="field_016" placeholder="Enter city" maxlength="100" pattern="^[a-zA-Z\s\-\.]+$" required>
+    <p class="help-text">Enter the city of your current residential address</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_017">State <span class="req">*</span></label>
     <select id="field_017" name="field_017" required>
           <option value="">-- Select --</option>
         </select>
-    <p class="help-text">Select the state for your current address</p>
+    <p class="help-text">Enter the two-letter state abbreviation for your address</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_018">ZIP Code <span class="req">*</span></label>
@@ -349,11 +349,11 @@ input[type="radio"] {
     <select id="field_019" name="field_019" required>
           <option value="-- Select --">-- Select --</option><option value="Own">Own</option><option value="Rent">Rent</option><option value="Live with family">Live with family</option><option value="Other">Other</option>
         </select>
-    <p class="help-text">Select whether you own your home, rent, live with family, or have another living arrangement</p>
+    <p class="help-text">Select whether you own your home, rent, live with family, or have another living arrangement.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_020">Years at Current Address <span class="req">*</span></label>
-    <input type="text" id="field_020" name="field_020" placeholder="e.g., 2 or 2.5" maxlength="5" required>
+    <input type="text" id="field_020" name="field_020" placeholder="e.g., 2 or 2.5" maxlength="5" pattern="^\d+(\.\d{1,2})?$" required>
     <p class="help-text">Enter the number of years you have lived at your current address. You may use decimals for partial years (e.g., 1.5 for one and a half years).</p>
   </div>
 <div class="field">
@@ -366,83 +366,83 @@ input[type="radio"] {
     <h2 class="section-heading">Page 2</h2>
     <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_022" name="field_022"> Co-Applicant</label>
-        <p class="help-text">Check this box if there is a co-applicant applying for this loan with you</p>
+        <p class="help-text">Check this box if there is a co-applicant for this loan. You will need to provide the co-applicant&#39;s information including name, SSN, and email address.</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_023">Co-Applicant First Name</label>
-    <input type="text" id="field_023" name="field_023" placeholder="Enter first name" maxlength="50" pattern="^[a-zA-Z\s&#39;-]+$">
-    <p class="help-text">First name of the co-applicant applying for this loan (only if there is a co-applicant)</p>
+    <input type="text" id="field_023" name="field_023" placeholder="Enter first name" maxlength="50" pattern="^[A-Za-z\s&#39;-]+$">
+    <p class="help-text">First name of the co-applicant (only required if there is a co-applicant for this loan)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_024">Co-Applicant Middle Name</label>
-    <input type="text" id="field_024" name="field_024" placeholder="Middle name or initial" maxlength="50" pattern="^[a-zA-Z\s\.\-]*$">
-    <p class="help-text">Enter the co-applicant&#39;s middle name or initial. This field is optional.</p>
+    <input type="text" id="field_024" name="field_024" placeholder="Middle name" maxlength="50" pattern="^[a-zA-Z\s&#39;-]*$">
+    <p class="help-text">Middle name of the co-applicant (spouse, business partner, or guarantor). Leave blank if not applicable.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_025">Co-Applicant Last Name</label>
     <input type="text" id="field_025" name="field_025" placeholder="Enter last name" maxlength="100" pattern="^[A-Za-z\s&#39;-]+$">
-    <p class="help-text">Required only if there is a co-applicant (spouse, business partner, or guarantor). The co-applicant&#39;s credit history will be considered in the evaluation.</p>
+    <p class="help-text">Provide the last name of the co-applicant (spouse, business partner, or guarantor) if applicable.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_026">Co-Applicant Social Security Number</label>
-    <input type="text" id="field_026" name="field_026" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-\d{2}-\d{4}$|^\d{9}$">
-    <p class="help-text">Enter the Social Security Number of the co-applicant. This field is only required if there is a co-applicant for this loan.</p>
+    <input type="text" id="field_026" name="field_026" placeholder="###-##-####" maxlength="11" pattern="^\d{3}-?\d{2}-?\d{4}$">
+    <p class="help-text">Enter the Social Security Number for the co-applicant. This field is only required if you are applying with a co-applicant.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_027">Co-Applicant Date of Birth</label>
-    <input type="date" id="field_027" name="field_027" placeholder="MM/DD/YYYY">
-    <p class="help-text">Enter the date of birth for the co-applicant (spouse, business partner, or guarantor). Required only if there is a co-applicant.</p>
+    <label class="field-label" for="field_027">Co-Applicant Date of Birth <span class="req">*</span></label>
+    <input type="date" id="field_027" name="field_027" placeholder="MM/DD/YYYY" required>
+    <p class="help-text">Enter the co-applicant&#39;s date of birth. This information is used for identity verification and credit history evaluation.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_028">Co-Applicant Phone Number</label>
-    <input type="text" id="field_028" name="field_028" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\.\+]+$">
-    <p class="help-text">Phone number for the co-applicant (spouse, business partner, or guarantor)</p>
+    <label class="field-label" for="field_028">Co-Applicant Phone Number <span class="req">*</span></label>
+    <input type="text" id="field_028" name="field_028" placeholder="(555) 123-4567" maxlength="14" pattern="^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" required>
+    <p class="help-text">Enter the co-applicant&#39;s primary contact phone number</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_029">Co-Applicant Email Address <span class="req">*</span></label>
-    <input type="text" id="field_029" name="field_029" placeholder="example@email.com" maxlength="255" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
-    <p class="help-text">Enter the email address for the co-applicant on this loan application</p>
+    <label class="field-label" for="field_029">Co-Applicant Email Address</label>
+    <input type="text" id="field_029" name="field_029" placeholder="example@email.com" maxlength="255" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+    <p class="help-text">Enter the co-applicant&#39;s email address for correspondence regarding this loan application</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_030">Relationship to Primary Applicant <span class="req">*</span></label>
     <select id="field_030" name="field_030" required>
           <option value="-- Select --">-- Select --</option><option value="Spouse">Spouse</option><option value="Business Partner">Business Partner</option><option value="Family Member">Family Member</option><option value="Guarantor">Guarantor</option><option value="Other">Other</option>
         </select>
-    <p class="help-text">Select how the co-applicant is related to the primary applicant on this loan application</p>
+    <p class="help-text">Select how the co-applicant is related to the primary applicant on this application</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_031">Current Employer <span class="req">*</span></label>
-    <input type="text" id="field_031" name="field_031" placeholder="Enter your current employer&#39;s name" maxlength="200" required>
-    <p class="help-text">Provide the legal name of your current employer or company you work for</p>
+    <input type="text" id="field_031" name="field_031" placeholder="Enter employer name or &#39;Retired&#39;" maxlength="200" required>
+    <p class="help-text">Enter your current employer&#39;s name. If self-employed, enter your business name. If retired, enter &#39;Retired&#39; and provide pension or retirement income details in the financial section.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_032">Job Title <span class="req">*</span></label>
-    <input type="text" id="field_032" name="field_032" placeholder="e.g., Software Engineer, Manager, Sales Associate" maxlength="100" required>
+    <input type="text" id="field_032" name="field_032" placeholder="e.g., Software Engineer, Marketing Manager" maxlength="100" required>
     <p class="help-text">Enter your current job title or position at your employer</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_033">Years Employed <span class="req">*</span></label>
-    <input type="text" id="field_033" name="field_033" placeholder="e.g., 2" maxlength="3" pattern="^[0-9]+$" required>
-    <p class="help-text">Enter the number of years you have been employed at your current position. If less than one year, enter 0 and specify months in the adjacent field.</p>
+    <input type="text" id="field_033" name="field_033" placeholder="e.g., 3" maxlength="2" pattern="^[0-9]+$" required>
+    <p class="help-text">Enter the number of years you have been employed at your current position. Use the months field for partial years.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_034">Months at Current Employer <span class="req">*</span></label>
-    <input type="text" id="field_034" name="field_034" placeholder="0-11" maxlength="2" pattern="^(0?[0-9]|1[0-1])$" required>
-    <p class="help-text">Enter the number of months (0-11) you&#39;ve been employed at your current job. Use with &#39;Years Employed&#39; to indicate total employment duration.</p>
+    <label class="field-label" for="field_034">Months <span class="req">*</span></label>
+    <input type="text" id="field_034" name="field_034" placeholder="0-11" maxlength="2" pattern="^([0-9]|1[0-1])$" required>
+    <p class="help-text">Enter the number of months (0-11) you have been employed at your current position. Use this field together with &#39;Years Employed&#39; to specify your total employment duration.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_035">Current Employer Address <span class="req">*</span></label>
-    <input type="text" id="field_035" name="field_035" placeholder="123 Main St, City, State ZIP" maxlength="200" required>
-    <p class="help-text">Enter the complete address of your current employer</p>
+    <input type="text" id="field_035" name="field_035" placeholder="123 Main Street, City, State ZIP" maxlength="200" required>
+    <p class="help-text">Enter the full address of your current employer. If retired, state &#39;Retired&#39; and provide pension or retirement income details in the financial section.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_036">Employer Phone <span class="req">*</span></label>
-    <input type="text" id="field_036" name="field_036" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\.\+]+$" required>
-    <p class="help-text">Enter your current employer&#39;s contact phone number</p>
+    <label class="field-label" for="field_036">Employer Phone Number <span class="req">*</span></label>
+    <input type="text" id="field_036" name="field_036" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\-\(\)\+\.ext]+$" required>
+    <p class="help-text">Enter the main phone number of your current employer</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_037">Annual Salary/Income <span class="req">*</span></label>
-    <input type="text" id="field_037" name="field_037" placeholder="e.g., 75000" maxlength="10" pattern="^[0-9]+$" required>
+    <input type="text" id="field_037" name="field_037" placeholder="e.g., 75000" pattern="^[0-9]+$" required>
     <p class="help-text">Enter your current annual salary or income in dollars. Do not include commas or dollar signs.</p>
   </div>
 <div class="field">
@@ -450,66 +450,64 @@ input[type="radio"] {
     <select id="field_038" name="field_038" required>
           <option value="-- Select --">-- Select --</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Self-employed">Self-employed</option><option value="Contract">Contract</option><option value="Seasonal">Seasonal</option><option value="Retired">Retired</option>
         </select>
-    <p class="help-text">Select your current employment status. If you have been at your current job for less than 2 years, you may need to provide previous employment information.</p>
+    <p class="help-text">Select the type of employment for your previous employer. Required if you have been at your current job for less than 2 years.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_039">Previous Employer Name</label>
-    <input type="text" id="field_039" name="field_039" placeholder="Enter company name" maxlength="200">
-    <p class="help-text">Only required if you have been at your current employer for less than 2 years</p>
+    <input type="text" id="field_039" name="field_039" placeholder="Enter previous employer name" maxlength="200">
+    <p class="help-text">Required only if you have been at your current employer for less than 2 years</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_040">Job Title</label>
-    <input type="text" id="field_040" name="field_040" placeholder="e.g., Sales Manager, Software Engineer" maxlength="100">
-    <p class="help-text">Enter your job title at your previous employer. Only required if you have been at your current employer for less than 2 years.</p>
+    <label class="field-label" for="field_040">Previous Job Title</label>
+    <input type="text" id="field_040" name="field_040" placeholder="e.g., Marketing Manager, Software Engineer" maxlength="100">
+    <p class="help-text">Enter your job title at your previous employer (only required if you&#39;ve been at your current job for less than 2 years)</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_041">Years at Previous Employer</label>
-    <input type="text" id="field_041" name="field_041" placeholder="e.g., 2" maxlength="10" pattern="^\d+(\.\d+)?$">
-    <p class="help-text">Enter the number of years you worked at your previous employer (only required if you&#39;ve been at your current employer for less than 2 years)</p>
+    <label class="field-label" for="field_041">Years at Previous Employment</label>
+    <input type="text" id="field_041" name="field_041" placeholder="e.g., 3" maxlength="5" pattern="^\d+(\.\d+)?$">
+    <p class="help-text">Enter the number of years you worked at your previous employer</p>
   </div>
   </section>
 <section id="page_3" class="form-section">
     <h2 class="section-heading">Page 3</h2>
     <div class="field">
     <label class="field-label" for="field_042">Legal Business Name <span class="req">*</span></label>
-    <input type="text" id="field_042" name="field_042" placeholder="Enter the official registered business name" maxlength="255" required>
-    <p class="help-text">Provide the complete legal name of your business as it appears on official registration documents. If the business is not yet established, indicate &#39;Startup&#39; for the business type.</p>
+    <input type="text" id="field_042" name="field_042" placeholder="Enter the legal name of your business" maxlength="200" required>
+    <p class="help-text">Provide the official legal name of your business as registered with the state. This should match your incorporation or registration documents.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_043">DBA / Trade Name</label>
-    <input type="text" id="field_043" name="field_043" placeholder="Enter DBA or trade name if applicable" maxlength="200">
-    <p class="help-text">Enter the &quot;Doing Business As&quot; (DBA) or trade name only if it differs from your legal business name. Leave blank if not applicable.</p>
+    <input type="text" id="field_043" name="field_043" placeholder="e.g., Joe&#39;s Coffee Shop" maxlength="255">
+    <p class="help-text">Enter the &quot;Doing Business As&quot; name or trade name if your business operates under a name different from its legal registered name.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_044">Federal EIN (Tax ID) <span class="req">*</span></label>
-    <input type="text" id="field_044" name="field_044" placeholder="12-3456789" maxlength="10" pattern="^\d{2}-?\d{7}$" required>
-    <p class="help-text">Enter your 9-digit Employer Identification Number (EIN) assigned by the IRS. Format: XX-XXXXXXX</p>
+    <input type="text" id="field_044" name="field_044" placeholder="XX-XXXXXXX" maxlength="10" pattern="^\d{2}-?\d{7}$" required>
+    <p class="help-text">Enter your 9-digit Federal Employer Identification Number (EIN) assigned by the IRS. Format: XX-XXXXXXX</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_045">Business Entity Type <span class="req">*</span></label>
     <select id="field_045" name="field_045" required>
           <option value="-- Select --">-- Select --</option><option value="Sole Proprietorship">Sole Proprietorship</option><option value="Partnership">Partnership</option><option value="LLC">LLC</option><option value="S-Corporation">S-Corporation</option><option value="C-Corporation">C-Corporation</option><option value="Non-Profit">Non-Profit</option><option value="Other">Other</option>
         </select>
-    <p class="help-text">Select the legal structure of your business. This determines how your business is taxed and your personal liability. Common options include Sole Proprietorship (individual owner), LLC (limited liability company), or Corporation.</p>
+    <p class="help-text">Select the legal structure of your business. This determines how your business is taxed and your liability exposure.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_046">Industry / NAICS Code <span class="req">*</span></label>
     <select id="field_046" name="field_046" required>
           <option value="-- Select --">-- Select --</option><option value="Retail Trade">Retail Trade</option><option value="Professional Services">Professional Services</option><option value="Construction">Construction</option><option value="Manufacturing">Manufacturing</option><option value="Food &amp; Accommodation">Food &amp; Accommodation</option><option value="Healthcare">Healthcare</option><option value="Technology">Technology</option><option value="Transportation">Transportation</option><option value="Agriculture">Agriculture</option><option value="Real Estate">Real Estate</option><option value="Other">Other</option>
         </select>
-    <p class="help-text">Select the primary industry classification for your business. NAICS (North American Industry Classification System) codes are used for statistical and tax purposes.</p>
+    <p class="help-text">Select the primary industry that best describes your business operations. This corresponds to the North American Industry Classification System (NAICS).</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_047">Date Established <span class="req">*</span></label>
     <input type="date" id="field_047" name="field_047" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter the date when your business was officially established or incorporated</p>
+    <p class="help-text">Enter the date when your business was officially established or registered</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_048">State of Incorporation <span class="req">*</span></label>
-    <select id="field_048" name="field_048" required>
-          <option value="">-- Select --</option>
-        </select>
-    <p class="help-text">Select the state where your business was incorporated or formed</p>
+    <input type="text" id="field_048" name="field_048" placeholder="e.g., CA, NY, DE" maxlength="2" pattern="^[A-Z]{2}$" required>
+    <p class="help-text">Enter the two-letter state abbreviation where your business is incorporated or organized</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_049">Number of Employees</label>
@@ -519,134 +517,132 @@ input[type="radio"] {
 <div class="field">
     <label class="field-label" for="field_050">Business Address - Street <span class="req">*</span></label>
     <input type="text" id="field_050" name="field_050" placeholder="123 Main Street, Suite 100" maxlength="200" required>
-    <p class="help-text">Enter the street address where your business is located (street number, street name, and unit/suite if applicable)</p>
+    <p class="help-text">Enter the street address of your business location</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_051">City <span class="req">*</span></label>
-    <input type="text" id="field_051" name="field_051" placeholder="Enter city" maxlength="100" pattern="^[a-zA-Z\s\-\.]+$" required>
+    <input type="text" id="field_051" name="field_051" placeholder="Enter city" maxlength="100" pattern="^[a-zA-Z\s\-&#39;.]+$" required>
     <p class="help-text">Enter the city where your business is located</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_052">State <span class="req">*</span></label>
-    <select id="field_052" name="field_052" required>
-          <option value="">-- Select --</option>
-        </select>
+    <input type="text" id="field_052" name="field_052" placeholder="e.g., CA, NY, TX" maxlength="2" pattern="^[A-Z]{2}$" required>
     <p class="help-text">Enter the two-letter state abbreviation for the business address</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_053">ZIP Code <span class="req">*</span></label>
-    <input type="text" id="field_053" name="field_053" placeholder="e.g., 12345 or 12345-6789" maxlength="10" pattern="^\d{5}(-\d{4})?$" required>
+    <input type="text" id="field_053" name="field_053" placeholder="12345 or 12345-6789" maxlength="10" pattern="^\d{5}(-\d{4})?$" required>
     <p class="help-text">Enter the ZIP code for the business address</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_054">Business Phone <span class="req">*</span></label>
-    <input type="text" id="field_054" name="field_054" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\.\+]+$" required>
-    <p class="help-text">Enter the primary contact phone number for your business</p>
+    <input type="text" id="field_054" name="field_054" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s\(\)\-\+\.]+$" required>
+    <p class="help-text">Enter the primary phone number for your business</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_055">Business Fax Number</label>
-    <input type="text" id="field_055" name="field_055" placeholder="(555) 123-4567" maxlength="20" pattern="^[\d\s()+-]*$">
-    <p class="help-text">Optional fax number for business correspondence</p>
+    <input type="text" id="field_055" name="field_055" placeholder="(555) 123-4567" maxlength="20" pattern="^[0-9() +-]*$">
+    <p class="help-text">Enter the fax number for your business (optional)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_056">Business Website</label>
     <input type="text" id="field_056" name="field_056" placeholder="https://www.example.com" maxlength="255" pattern="^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&amp;//=]*)$">
-    <p class="help-text">Enter your business website URL (optional)</p>
+    <p class="help-text">Enter the website URL for the business (optional)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_057">Owner 1 Name <span class="req">*</span></label>
-    <input type="text" id="field_057" name="field_057" placeholder="Enter full name" maxlength="100" pattern="^[a-zA-Z\s&#39;-]+$" required>
-    <p class="help-text">Enter the full legal name of the primary business owner</p>
+    <input type="text" id="field_057" name="field_057" placeholder="Enter full legal name" maxlength="200" pattern="^[a-zA-Z\s\-\.,&#39;]+$" required>
+    <p class="help-text">Enter the full legal name of the first business owner as it appears on official documents.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_058">Title <span class="req">*</span></label>
-    <input type="text" id="field_058" name="field_058" placeholder="e.g., President, CEO, Managing Member" maxlength="100" required>
-    <p class="help-text">Enter the title or role of Owner 1 within the organization (e.g., President, CEO, Partner, Member).</p>
+    <label class="field-label" for="field_058">Owner 1 Title <span class="req">*</span></label>
+    <input type="text" id="field_058" name="field_058" placeholder="e.g., CEO, President, Managing Member" maxlength="100" required>
+    <p class="help-text">Enter the title or role of the first owner with 20% or more ownership in the business</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_059">Ownership Percentage <span class="req">*</span></label>
-    <input type="text" id="field_059" name="field_059" placeholder="e.g., 50" pattern="^\d{1,3}(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the percentage of ownership for this individual (0-100)</p>
+    <label class="field-label" for="field_059">Owner 1 Percentage Owned <span class="req">*</span></label>
+    <input type="text" id="field_059" name="field_059" placeholder="e.g., 50" maxlength="6" pattern="^\d+(\.\d{1,2})?$" required>
+    <p class="help-text">Enter the percentage of ownership for Owner 1. Use whole numbers or decimals (e.g., 50 or 33.33).</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_060">Social Security Number (Owner 1) <span class="req">*</span></label>
-    <input type="text" id="field_060" name="field_060" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-\d{2}-\d{4}$|^\d{9}$" required>
-    <p class="help-text">Enter the Social Security Number for the first owner. This information is required for tax reporting purposes.</p>
+    <label class="field-label" for="field_060">Owner 1 Social Security Number <span class="req">*</span></label>
+    <input type="text" id="field_060" name="field_060" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-?\d{2}-?\d{4}$" required>
+    <p class="help-text">Enter the Social Security Number for the first owner. Format: XXX-XX-XXXX</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_061">Owner 2 Name</label>
-    <input type="text" id="field_061" name="field_061" placeholder="Enter full name of second owner" maxlength="100">
-    <p class="help-text">Provide the full legal name of the second business owner if applicable</p>
+    <input type="text" id="field_061" name="field_061" placeholder="Enter full legal name" maxlength="100" pattern="^[a-zA-Z\s&#39;-]+$">
+    <p class="help-text">Enter the full legal name of the second business owner. If there is only one owner, leave this field blank.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_062">Title <span class="req">*</span></label>
-    <input type="text" id="field_062" name="field_062" placeholder="e.g., CEO, President, Managing Member" maxlength="100" required>
-    <p class="help-text">Enter the title or role of the second owner in the business</p>
+    <label class="field-label" for="field_062">Title (Owner 2) <span class="req">*</span></label>
+    <input type="text" id="field_062" name="field_062" placeholder="e.g., CEO, President, Member" maxlength="100" required>
+    <p class="help-text">Enter the title or role of the second owner with 20% or more ownership in the business.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_063">Owner 2 Percentage Owned <span class="req">*</span></label>
-    <input type="text" id="field_063" name="field_063" placeholder="e.g., 25" maxlength="6" pattern="^\d{1,3}(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the ownership percentage for Owner 2. Total ownership across all owners must equal 100%. Only include owners with 20% or more ownership.</p>
+    <label class="field-label" for="field_063">Owner 2 Percentage Owned</label>
+    <input type="text" id="field_063" name="field_063" placeholder="e.g., 50" maxlength="6" pattern="^\d+(\.\d{1,2})?$">
+    <p class="help-text">Enter the percentage of ownership for the second owner. Must be a number between 0 and 100.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_064">Owner 2 - Social Security Number</label>
+    <label class="field-label" for="field_064">Owner 2 Social Security Number</label>
     <input type="text" id="field_064" name="field_064" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-\d{2}-\d{4}$|^\d{9}$">
-    <p class="help-text">Enter the Social Security Number for the second owner. Required only if there is a second owner.</p>
+    <p class="help-text">Enter the Social Security Number for the second owner. Required if there is a second owner listed.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_065">Owner 3 Name</label>
-    <input type="text" id="field_065" name="field_065" placeholder="Enter full name" maxlength="100">
-    <p class="help-text">Full legal name of the third business owner (if applicable)</p>
+    <input type="text" id="field_065" name="field_065" placeholder="Enter full name" maxlength="100" pattern="^[A-Za-z\s&#39;-]+$">
+    <p class="help-text">Provide the full legal name of the third business owner. Only required if there are three or more owners.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_066">Title <span class="req">*</span></label>
-    <input type="text" id="field_066" name="field_066" placeholder="e.g., CEO, President, Managing Member" maxlength="100" required>
-    <p class="help-text">Enter the professional title or role of Owner 3 in the business</p>
+    <label class="field-label" for="field_066">Owner 3 Title</label>
+    <input type="text" id="field_066" name="field_066" placeholder="e.g., President, CEO, Managing Member" maxlength="100">
+    <p class="help-text">Enter the title or position of the third owner with 20% or more ownership in the business.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_067">Owner 3 Ownership Percentage</label>
-    <input type="text" id="field_067" name="field_067" placeholder="e.g., 25" pattern="^\d{1,3}(\.\d{1,2})?$">
-    <p class="help-text">Enter the percentage of ownership for Owner 3. Only include owners with 20% or more ownership. All ownership percentages must total 100%.</p>
+    <label class="field-label" for="field_067">Owner 3 Percentage Owned</label>
+    <input type="text" id="field_067" name="field_067" placeholder="e.g., 25.5" maxlength="6" pattern="^\d{1,3}(\.\d{1,2})?$">
+    <p class="help-text">Enter the percentage of ownership for the third owner. Use decimals if needed (e.g., 33.33 for one-third ownership).</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_068">Owner 3 Social Security Number</label>
     <input type="text" id="field_068" name="field_068" placeholder="XXX-XX-XXXX" maxlength="11" pattern="^\d{3}-\d{2}-\d{4}$|^\d{9}$">
-    <p class="help-text">Enter the Social Security Number for the third owner. Format: XXX-XX-XXXX</p>
+    <p class="help-text">Enter the Social Security Number for the third owner. Required if there is a third owner with ownership percentage.</p>
   </div>
   </section>
 <section id="page_4" class="form-section">
     <h2 class="section-heading">Page 4</h2>
     <div class="field">
     <label class="field-label" for="field_069">Loan Amount Requested <span class="req">*</span></label>
-    <input type="text" id="field_069" name="field_069" placeholder="$0.00" pattern="^\$?[0-9]{1,3}(,[0-9]{3})*(\.\d{2})?$|^[0-9]+(\.[0-9]{2})?$" required>
-    <p class="help-text">Enter the total amount you wish to borrow. This should reflect the funding needed for the purpose selected above.</p>
+    <input type="text" id="field_069" name="field_069" placeholder="Enter amount in dollars (e.g., 50000)" pattern="^[0-9]+\.?[0-9]{0,2}$" required>
+    <p class="help-text">Specify the total dollar amount you are requesting for this loan. Interest rates: variable at +1.5% or fixed at 7.25% (subject to change).</p>
   </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_070" name="field_070" required> Purpose of Loan <span class="req">*</span></label>
-        <p class="help-text">Select the primary reason you are applying for this business loan. Choose the option that best describes how you intend to use the funds.</p>
+        <p class="help-text">Select the primary purpose for which you are requesting this loan. You may select multiple options if applicable.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_071" name="field_071" required> Purpose of Loan <span class="req">*</span></label>
-        <p class="help-text">Select the primary reason you are applying for this business loan. You may choose one or more options that apply.</p>
+        <p class="help-text">Select the primary reason you are applying for this business loan. You may select multiple options if applicable.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_072" name="field_072" required> Purpose of Loan <span class="req">*</span></label>
-        <p class="help-text">Select the primary reason you are applying for this loan. Choose the option that best describes how you plan to use the funds.</p>
+        <p class="help-text">Select the primary purpose for which you are requesting this loan. Multiple selections may be allowed depending on your specific needs.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_073" name="field_073" required> Loan Purpose <span class="req">*</span></label>
+        <p class="help-text">Select the primary purpose for your loan request. Choose the option that best describes how you intend to use the funds.</p>
       </div>
 <div class="field">
         <label class="field-label">Loan Purpose <span class="req">*</span></label>
-        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_073" value="Option 1" required> Option 1</label>
-          <label class="radio-label"><input type="radio" name="field_073" value="Option 2"> Option 2</label>
-          <label class="radio-label"><input type="radio" name="field_073" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select the primary purpose for your loan request. Choose the option that best describes how you intend to use the funds.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_074" name="field_074" required> Loan Purpose <span class="req">*</span></label>
-        <p class="help-text">Select the primary purpose for your loan. Choose &#39;Other&#39; if none of the standard options apply and provide details.</p>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_074" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_074" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_074" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select the primary purpose for which you will use the loan funds. Choose &#39;Other&#39; if your purpose is not listed and provide details.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_075" name="field_075" required> Loan Purpose <span class="req">*</span></label>
-        <p class="help-text">Select the primary purpose for this loan. If your purpose is not listed, select &#39;Other&#39; and provide details.</p>
+        <p class="help-text">Select the primary reason you are applying for this loan. If your purpose is not listed, choose &quot;Other&quot; and provide details.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_076" name="field_076" required> Loan Purpose <span class="req">*</span></label>
@@ -654,52 +650,49 @@ input[type="radio"] {
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_077" name="field_077" required> Loan Purpose <span class="req">*</span></label>
-        <p class="help-text">Select the primary purpose for your loan. If your purpose isn&#39;t listed, choose &quot;Other&quot; and provide details in the text field below.</p>
+        <p class="help-text">Select the primary purpose for your loan. Common options include startup costs, inventory purchase, or other business needs.</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_078">Other Loan Purpose</label>
     <input type="text" id="field_078" name="field_078" placeholder="Please specify the purpose of your loan" maxlength="200">
-    <p class="help-text">If you selected &#39;Other&#39; as your loan purpose, please provide details about how you intend to use the loan funds.</p>
+    <p class="help-text">If your loan purpose doesn&#39;t fit the predefined categories, please describe it here.</p>
   </div>
 <div class="field">
-        <label class="field-label">Preferred Loan Term</label>
-        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_079" value="Option 1"> Option 1</label>
+        <label class="field-label">Preferred Loan Term <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_079" value="Option 1" required> Option 1</label>
           <label class="radio-label"><input type="radio" name="field_079" value="Option 2"> Option 2</label>
           <label class="radio-label"><input type="radio" name="field_079" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select your preferred loan repayment period. Short-term loans typically have higher monthly payments but lower total interest, while long-term loans have lower monthly payments but higher total interest.</p>
+        <p class="help-text">Select your preferred loan term duration. Choose the timeframe that best fits your repayment capabilities and business needs.</p>
       </div>
 <div class="field">
         <label class="field-label">Preferred Loan Term</label>
         <div class="radio-group"><label class="radio-label"><input type="radio" name="field_080" value="Option 1"> Option 1</label>
           <label class="radio-label"><input type="radio" name="field_080" value="Option 2"> Option 2</label>
           <label class="radio-label"><input type="radio" name="field_080" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select your preferred loan term duration. Medium-term loans typically range from 1-5 years, while long-term loans extend from 5-10 years.</p>
+        <p class="help-text">Select your preferred loan repayment period. Choose between long-term (5-10 years), medium-term (1-5 years), or a revolving line of credit option.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_081" name="field_081"> Preferred Loan Term</label>
-        <p class="help-text">Select your preferred loan term length. This helps us tailor financing options to your needs.</p>
-      </div>
-<div class="field">
-        <label class="field-label">Loan Term Preference</label>
-        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_082" value="Option 1"> Option 1</label>
-          <label class="radio-label"><input type="radio" name="field_082" value="Option 2"> Option 2</label>
-          <label class="radio-label"><input type="radio" name="field_082" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select your preferred loan term structure. Choose the option that best fits your financial needs and risk tolerance.</p>
+        <p class="help-text">Select your preferred loan repayment period. Choose from short-term, long-term, or revolving credit options.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_083" name="field_083"> Interest Rate Preference</label>
-        <p class="help-text">Select your preferred interest rate type for this loan. Choose fixed rate for consistent payments or variable rate for potentially lower initial rates.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_082" name="field_082"> Interest Rate Preference</label>
+        <p class="help-text">Select your preferred interest rate type for the loan. Choose Fixed Rate for consistent payments, Variable Rate for potentially lower initial rates, or No Preference to see all options.</p>
       </div>
 <div class="field">
         <label class="field-label">Interest Rate Preference</label>
-        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_084" value="Option 1"> Option 1</label>
-          <label class="radio-label"><input type="radio" name="field_084" value="Option 2"> Option 2</label>
-          <label class="radio-label"><input type="radio" name="field_084" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select your preferred interest rate type for this loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions. Choose &#39;No Preference&#39; if you&#39;d like guidance from your lender.</p>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_083" value="Option 1"> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_083" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_083" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select your preferred interest rate type for this loan. Choose fixed for consistent payments or variable for potentially lower initial rates. Select &#39;No Preference&#39; if you&#39;d like to discuss options with a loan officer.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_084" name="field_084"> No Preference</label>
+        <p class="help-text">Select if you have no preference between fixed and variable interest rates</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_085" name="field_085"> Interest Rate Preference</label>
-        <p class="help-text">Select your preferred interest rate type for this loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions. Choose &quot;No Preference&quot; if you&#39;d like guidance from your loan officer.</p>
+        <p class="help-text">Select your preferred interest rate type for the loan. Fixed rates remain constant throughout the loan term, while variable rates may fluctuate with market conditions.</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_086">Date Funds Needed By <span class="req">*</span></label>
@@ -712,17 +705,17 @@ input[type="radio"] {
     <div class="field">
     <label class="field-label" for="field_087">Checking Accounts <span class="req">*</span></label>
     <input type="text" id="field_087" name="field_087" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total current balance of all your checking accounts in dollars</p>
+    <p class="help-text">Enter the total value of all checking accounts in dollars</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_088">Savings / Money Market <span class="req">*</span></label>
     <input type="text" id="field_088" name="field_088" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total current balance of all savings and money market accounts in dollars</p>
+    <p class="help-text">Enter the total current value of your savings and money market accounts in dollars. Enter 0 if none.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_089">Investment Assets <span class="req">*</span></label>
     <input type="text" id="field_089" name="field_089" placeholder="Enter total value of investments" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Include the total dollar value of your stocks, bonds, mutual funds, and other investment accounts (exclude retirement accounts listed separately).</p>
+    <p class="help-text">Include the total dollar value of retirement accounts (401k, IRA), stocks, bonds, mutual funds, and other investment holdings.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_090">Retirement Accounts (401k, IRA) <span class="req">*</span></label>
@@ -730,54 +723,54 @@ input[type="radio"] {
     <p class="help-text">Enter the total current value of all retirement accounts including 401(k), IRA, Roth IRA, and similar accounts. Enter 0 if none.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_091">Real Estate (market value) <span class="req">*</span></label>
-    <input type="text" id="field_091" name="field_091" placeholder="Enter market value" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current market value of all real estate properties you own, including your primary residence, investment properties, and land.</p>
+    <label class="field-label" for="field_091">Real Estate (Market Value)</label>
+    <input type="text" id="field_091" name="field_091" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
+    <p class="help-text">Enter the current market value of any real estate you own (homes, land, investment properties, etc.)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_092">Vehicles (Market Value) <span class="req">*</span></label>
-    <input type="text" id="field_092" name="field_092" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current market value of all vehicles you own (cars, motorcycles, boats, RVs, etc.). If none, enter 0.</p>
+    <input type="text" id="field_092" name="field_092" placeholder="Enter total market value of all vehicles" pattern="^\d+(\.\d{1,2})?$" required>
+    <p class="help-text">Enter the current market value of all vehicles you own, including cars, motorcycles, boats, RVs, etc. Use fair market value, not purchase price.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_093">Other Assets</label>
-    <input type="text" id="field_093" name="field_093" placeholder="Enter dollar amount" pattern="^\d*\.?\d{0,2}$">
-    <p class="help-text">Enter the total value of any other assets not listed above, such as investments, retirement accounts, savings, or personal property.</p>
+    <input type="text" id="field_093" name="field_093" placeholder="Enter dollar amount" pattern="^[0-9]*\.?[0-9]{0,2}$">
+    <p class="help-text">Enter the total value of any additional assets not listed above (e.g., investments, savings accounts, jewelry, collectibles, etc.)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_094">Total Assets <span class="req">*</span></label>
     <input type="text" id="field_094" name="field_094" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total value of all your assets in dollars. This typically includes cash, real estate, vehicles, investments, and other valuable property.</p>
+    <p class="help-text">Enter the total value of all your assets in dollars. This should include the sum of vehicles, real estate, investments, and other assets.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_095">Mortgage Balance <span class="req">*</span></label>
     <input type="text" id="field_095" name="field_095" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current outstanding balance on your mortgage(s). If you have multiple mortgages, enter the total combined balance.</p>
+    <p class="help-text">Enter the total outstanding balance on your mortgage(s). Include primary residence and any investment property mortgages.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_096">Auto Loans <span class="req">*</span></label>
-    <input type="text" id="field_096" name="field_096" placeholder="Enter total auto loan balance" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current outstanding balance of all auto loans (car, truck, motorcycle, etc.)</p>
+    <label class="field-label" for="field_096">Auto Loans</label>
+    <input type="text" id="field_096" name="field_096" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
+    <p class="help-text">Enter the total outstanding balance of all auto loans (car, truck, motorcycle, etc.)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_097">Credit Card Balances <span class="req">*</span></label>
     <input type="text" id="field_097" name="field_097" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total outstanding balance across all credit cards</p>
+    <p class="help-text">Enter the total outstanding balance on all credit cards</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_098">Student Loans <span class="req">*</span></label>
-    <input type="text" id="field_098" name="field_098" placeholder="Enter total student loan balance" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total outstanding balance of all student loans in dollars. If you have no student loans, enter 0.</p>
+    <input type="text" id="field_098" name="field_098" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
+    <p class="help-text">Enter the total outstanding balance of all student loans. Enter 0 if you have no student loans.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_099">Other Liabilities</label>
-    <input type="text" id="field_099" name="field_099" placeholder="Enter amount in dollars" pattern="^\d*\.?\d{0,2}$">
-    <p class="help-text">Enter any additional liabilities not covered in other categories (e.g., personal loans, tax debts, medical bills)</p>
+    <input type="text" id="field_099" name="field_099" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
+    <p class="help-text">Enter any additional liabilities not listed above (e.g., personal loans, medical debt, tax obligations)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_100">Total Liabilities <span class="req">*</span></label>
     <input type="text" id="field_100" name="field_100" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the sum of all your liabilities including credit card balances, student loans, and other debts. This should equal the total of all liability items listed above.</p>
+    <p class="help-text">Enter the total sum of all your liabilities including credit card balances, student loans, and other debts</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_101">Net Worth <span class="req">*</span></label>
@@ -789,72 +782,72 @@ input[type="radio"] {
     <h2 class="section-heading">Page 6</h2>
     <div class="field">
     <label class="field-label" for="field_102">Gross Revenue <span class="req">*</span></label>
-    <input type="text" id="field_102" name="field_102" placeholder="Enter gross revenue amount" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total gross revenue for your business from the most recent fiscal year. This is the total income before deducting cost of goods sold or operating expenses.</p>
+    <input type="text" id="field_102" name="field_102" placeholder="Enter gross revenue amount" pattern="^[0-9]+(\.[0-9]{1,2})?$" required>
+    <p class="help-text">Enter the total gross revenue for your most recent fiscal year in dollars. Do not include dollar signs or commas.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_103">Fiscal Year End <span class="req">*</span></label>
-    <input type="text" id="field_103" name="field_103" placeholder="MM/YYYY" maxlength="7" pattern="^(0[1-9]|1[0-2])/[0-9]{4}$" required>
-    <p class="help-text">Enter the month and year when your business&#39;s fiscal year ends (e.g., 12/2023 for December 2023)</p>
+    <input type="date" id="field_103" name="field_103" placeholder="MM/YYYY" required>
+    <p class="help-text">Enter the month and year your business fiscal year ends (e.g., 12/2023 for December 2023)</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_104">Cost of Goods Sold</label>
-    <input type="text" id="field_104" name="field_104" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
+    <label class="field-label" for="field_104">Cost of Goods Sold <span class="req">*</span></label>
+    <input type="text" id="field_104" name="field_104" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
     <p class="help-text">Enter the total cost of goods sold (COGS) for the most recent fiscal year. This includes direct costs attributable to the production of goods sold by your business.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_105">Gross Profit <span class="req">*</span></label>
-    <input type="text" id="field_105" name="field_105" placeholder="e.g., 250000" pattern="^[0-9]+\.?[0-9]{0,2}$" required>
-    <p class="help-text">Enter the gross profit amount in dollars. Gross profit is calculated as total revenue minus cost of goods sold. For startups, provide projected figures clearly marked as estimates.</p>
+    <input type="text" id="field_105" name="field_105" placeholder="Enter gross profit amount" pattern="^\$?\d{1,3}(,\d{3})*(\.\d{2})?$" required>
+    <p class="help-text">Enter the gross profit in dollars from your most recent income statement. Gross profit is calculated as revenue minus cost of goods sold.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_106">Total Operating Expenses <span class="req">*</span></label>
     <input type="text" id="field_106" name="field_106" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total operating expenses for your most recent fiscal year, excluding cost of goods sold. Operating expenses typically include rent, utilities, salaries, marketing, insurance, and other business overhead costs.</p>
+    <p class="help-text">Enter the total operating expenses for your most recent fiscal year. This includes all costs of running the business excluding cost of goods sold (e.g., rent, utilities, salaries, marketing, insurance).</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_107">Net Income <span class="req">*</span></label>
-    <input type="text" id="field_107" name="field_107" placeholder="Enter net income amount" pattern="^[0-9]+\.?[0-9]*$" required>
-    <p class="help-text">Enter your business&#39;s net income in dollars. If you are a startup, provide projected figures clearly marked as estimates.</p>
+    <label class="field-label" for="field_107">Business Net Income <span class="req">*</span></label>
+    <input type="text" id="field_107" name="field_107" placeholder="Enter net income amount" pattern="^[0-9]*\.?[0-9]+$" required>
+    <p class="help-text">Enter your business&#39;s net income in dollars from your most recent income statement. If the business has been operating for more than one year, provide the most recent fiscal year&#39;s net income.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_108">Prior Year Gross Revenue <span class="req">*</span></label>
-    <input type="text" id="field_108" name="field_108" placeholder="e.g., 250000" pattern="^[0-9]+\.?[0-9]{0,2}$" required>
-    <p class="help-text">Enter your business&#39;s total gross revenue from the previous year for comparison purposes. This should be the total income before deducting expenses.</p>
+    <input type="text" id="field_108" name="field_108" placeholder="e.g., 250000" pattern="^\d+(\.\d{1,2})?$" required>
+    <p class="help-text">Enter the total gross revenue your business generated in the prior year (before expenses). This is used for year-over-year comparison.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_109">Prior Year Net Income <span class="req">*</span></label>
-    <input type="text" id="field_109" name="field_109" placeholder="Enter amount in dollars" pattern="^[0-9]*\.?[0-9]{0,2}$" required>
-    <p class="help-text">Enter the net income from the previous fiscal year. This should match the net income reported on your prior year&#39;s financial statements.</p>
+    <input type="text" id="field_109" name="field_109" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
+    <p class="help-text">Enter the net income from the previous fiscal year in dollars</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_110">Primary Business Bank <span class="req">*</span></label>
-    <input type="text" id="field_110" name="field_110" placeholder="Enter your bank name (e.g., Chase, Wells Fargo)" maxlength="100" required>
-    <p class="help-text">Enter the name of the financial institution where you maintain your primary business banking account.</p>
+    <input type="text" id="field_110" name="field_110" placeholder="Enter your bank name (e.g., First National Bank)" maxlength="100" required>
+    <p class="help-text">Enter the name of the financial institution where your business maintains its primary banking relationship.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_111">Business Bank Account Number <span class="req">*</span></label>
     <input type="text" id="field_111" name="field_111" placeholder="Enter your business bank account number" maxlength="17" pattern="^[0-9]{8,17}$" required>
-    <p class="help-text">Provide the account number for your primary business banking account</p>
+    <p class="help-text">Provide the account number for your primary business banking account at First National Bank (if you are an existing customer)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_112">Average Monthly Balance <span class="req">*</span></label>
-    <input type="text" id="field_112" name="field_112" placeholder="Enter average monthly balance" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the average monthly balance of your business bank account in dollars</p>
+    <input type="text" id="field_112" name="field_112" placeholder="Enter amount in dollars" pattern="^[0-9]+$" required>
+    <p class="help-text">Enter the average monthly balance for your business bank account in dollars (do not include cents or currency symbols)</p>
   </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_113" name="field_113"> I am an existing First National Bank customer</label>
-        <p class="help-text">Check this box if you currently have an account with First National Bank. If yes, please provide your account number in the field below.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_113" name="field_113"> Existing First National Bank Customer</label>
+        <p class="help-text">Check this box if you already have an account with First National Bank. If yes, please provide your account number in the field below.</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_114">Existing Account Number</label>
-    <input type="text" id="field_114" name="field_114" placeholder="Enter your account number" maxlength="20" pattern="^[0-9]{6,20}$">
-    <p class="help-text">If you are an existing First National Bank customer, please provide your account number.</p>
+    <input type="text" id="field_114" name="field_114" placeholder="Enter your account number" maxlength="20" pattern="^[0-9-]*$">
+    <p class="help-text">If you are an existing First National Bank customer, please provide your account number</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_115">Creditor 1 - Name <span class="req">*</span></label>
-    <input type="text" id="field_115" name="field_115" placeholder="Enter creditor name" maxlength="100" required>
-    <p class="help-text">Enter the name of the financial institution or creditor for your first outstanding business debt</p>
+    <input type="text" id="field_115" name="field_115" placeholder="Enter creditor or lender name" maxlength="200" required>
+    <p class="help-text">Provide the name of the financial institution, lender, or creditor for your first outstanding business debt (e.g., bank name, credit card company, vendor)</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_116">Balance <span class="req">*</span></label>
@@ -864,365 +857,380 @@ input[type="radio"] {
 <div class="field">
     <label class="field-label" for="field_117">Monthly Payment</label>
     <input type="text" id="field_117" name="field_117" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
-    <p class="help-text">Enter the monthly payment amount for this debt in dollars</p>
+    <p class="help-text">Enter the monthly payment amount in dollars for this debt</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_118">Interest Rate (%)</label>
-    <input type="text" id="field_118" name="field_118" placeholder="e.g., 4.5" pattern="^\d+(\.\d{1,3})?$">
+    <input type="text" id="field_118" name="field_118" placeholder="e.g., 5.75" maxlength="6" pattern="^\d+(\.\d{1,2})?$">
     <p class="help-text">Enter the annual interest rate percentage for this debt</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_119">Creditor 2 Name</label>
-    <input type="text" id="field_119" name="field_119" placeholder="Enter creditor name" maxlength="255">
-    <p class="help-text">Enter the name of the second creditor for outstanding business debts (e.g., bank name, lender, or financial institution)</p>
+    <input type="text" id="field_119" name="field_119" placeholder="Enter creditor name" maxlength="200">
+    <p class="help-text">Enter the name of the second creditor for outstanding business debts, loans, or lines of credit.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_120">Balance <span class="req">*</span></label>
     <input type="text" id="field_120" name="field_120" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current outstanding balance for this debt or obligation in dollars</p>
+    <p class="help-text">Enter the current outstanding balance of this debt obligation in dollars</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_121">Monthly Payment</label>
+    <label class="field-label" for="field_121">Monthly Payment (Debt 2)</label>
     <input type="text" id="field_121" name="field_121" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
-    <p class="help-text">Enter the monthly payment amount for this debt in dollars</p>
+    <p class="help-text">Enter the monthly payment amount in dollars for your second debt or liability.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_122">Debt 2 - Interest Rate</label>
+    <label class="field-label" for="field_122">Interest Rate (%)</label>
     <input type="text" id="field_122" name="field_122" placeholder="e.g., 5.25" pattern="^\d+(\.\d{1,3})?$">
-    <p class="help-text">Enter the annual interest rate percentage for this debt (without the % symbol)</p>
+    <p class="help-text">Enter the annual interest rate percentage for this debt</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_123">Creditor 3 Name</label>
-    <input type="text" id="field_123" name="field_123" placeholder="Enter creditor name" maxlength="200">
-    <p class="help-text">Enter the name of the third creditor for outstanding business debts (e.g., bank name, lender, or financial institution)</p>
+    <input type="text" id="field_123" name="field_123" placeholder="Enter creditor or lender name" maxlength="200">
+    <p class="help-text">Enter the name of the third creditor, lender, or financial institution for outstanding business debt</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_124">Balance <span class="req">*</span></label>
-    <input type="text" id="field_124" name="field_124" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the current outstanding balance for this debt obligation in dollars</p>
+    <label class="field-label" for="field_124">Balance</label>
+    <input type="text" id="field_124" name="field_124" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
+    <p class="help-text">Enter the current outstanding balance for this debt in dollars</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_125">Monthly Payment</label>
     <input type="text" id="field_125" name="field_125" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$">
-    <p class="help-text">Enter the monthly payment amount for this debt in dollars</p>
+    <p class="help-text">Enter the monthly payment amount in dollars for this debt</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_126">Interest Rate</label>
-    <input type="text" id="field_126" name="field_126" placeholder="0.00" maxlength="6" pattern="^\d+(\.\d{1,3})?$">
-    <p class="help-text">Enter the annual interest rate as a percentage (e.g., 5.5 for 5.5%)</p>
+    <input type="text" id="field_126" name="field_126" placeholder="e.g., 5.25" pattern="^\d+(\.\d{1,3})?$">
+    <p class="help-text">Enter the annual interest rate as a percentage (e.g., 5.25 for 5.25%)</p>
   </div>
   </section>
 <section id="page_7" class="form-section">
     <h2 class="section-heading">Page 7</h2>
-    <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_127" name="field_127" required> Primary Collateral Type <span class="req">*</span></label>
-        <p class="help-text">Select the primary type of collateral being offered to secure the loan. Choose the category that best represents the main asset being pledged.</p>
+    <div class="field">
+        <label class="field-label">Primary Collateral Type <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_127" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_127" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_127" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select the primary type of collateral being used to secure the loan. Choose the option that best represents the main asset backing this financing.</p>
       </div>
 <div class="field">
         <label class="field-label">Primary Collateral Type <span class="req">*</span></label>
         <div class="radio-group"><label class="radio-label"><input type="radio" name="field_128" value="Option 1" required> Option 1</label>
           <label class="radio-label"><input type="radio" name="field_128" value="Option 2"> Option 2</label>
           <label class="radio-label"><input type="radio" name="field_128" value="Option 3"> Option 3</label></div>
-        <p class="help-text">Select the primary type of collateral being used to secure the loan. Common types include inventory, equipment/machinery, accounts receivable, or real estate.</p>
+        <p class="help-text">Select the primary type of collateral being used to secure the loan. Common options include inventory, accounts receivable, equipment/machinery, or residential real estate.</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_129" name="field_129" required> Primary Collateral Type <span class="req">*</span></label>
-        <p class="help-text">Select the primary type of collateral being used to secure this loan. Multiple types may be selected if applicable.</p>
+        <p class="help-text">Select the primary type of collateral being offered to secure the loan. Common options include inventory, equipment/machinery, accounts receivable, or vehicles/fleet.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_130" name="field_130" required> Type of Collateral <span class="req">*</span></label>
-        <p class="help-text">Select one or more types of collateral you are offering to secure the loan. Common options include inventory, accounts receivable, vehicles/fleet, or cash savings/CDs.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_130" name="field_130"> Collateral Type</label>
+        <p class="help-text">Select the type(s) of collateral you are offering to secure the loan. Multiple selections may be allowed.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_131" name="field_131"> Collateral Type</label>
-        <p class="help-text">Select the type of collateral you are offering to secure the loan. Multiple selections may be possible.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_131" name="field_131" required> Collateral Type <span class="req">*</span></label>
+        <p class="help-text">Select the type(s) of collateral you are offering to secure the loan. Multiple selections may be allowed.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_132" name="field_132"> Collateral Type</label>
-        <p class="help-text">Select the type of collateral you are offering to secure this loan. Choose &quot;None / Unsecured Request&quot; if you are not providing collateral.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_132" name="field_132" required> Collateral Type <span class="req">*</span></label>
+        <p class="help-text">Select the type of collateral you will provide to secure this loan. Choose &quot;None / Unsecured Request&quot; if you are not providing collateral.</p>
       </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_133" name="field_133" required> Collateral Type <span class="req">*</span></label>
-        <p class="help-text">Select the type of collateral being offered to secure this loan. Choose &#39;None / Unsecured Request&#39; if no collateral is available.</p>
+<div class="field">
+        <label class="field-label">Collateral Type <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_133" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_133" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_133" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select the type of collateral you are offering to secure the loan. Choose &quot;None / Unsecured Request&quot; if no collateral is being provided.</p>
       </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_134" name="field_134"> Collateral Type</label>
-        <p class="help-text">Select the type of collateral you are offering to secure this loan. If you are not offering collateral, select &quot;None / Unsecured Request&quot;.</p>
+<div class="field">
+        <label class="field-label">Collateral Type <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_134" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_134" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_134" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select the type of collateral you are offering to secure this loan. Choose &#39;None / Unsecured Request&#39; if you are not providing collateral.</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_135">Collateral Description <span class="req">*</span></label>
-    <input type="text" id="field_135" name="field_135" placeholder="Describe the collateral (e.g., property address, vehicle details, equipment)" maxlength="500" required>
-    <p class="help-text">Provide a detailed description of the collateral being used to secure the loan, including identifying information such as addresses, VIN numbers, serial numbers, or other relevant details.</p>
+    <input type="text" id="field_135" name="field_135" placeholder="Describe the collateral (e.g., real estate, equipment, inventory, vehicles)" maxlength="500" required>
+    <p class="help-text">Provide a detailed description of the assets being used as collateral for this loan or financing arrangement.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_136">Estimated Value <span class="req">*</span></label>
     <input type="text" id="field_136" name="field_136" placeholder="Enter dollar amount" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the estimated current market value of the collateral in US dollars</p>
+    <p class="help-text">Enter the estimated current market value of the collateral in US dollars. This helps assess the security for the loan request.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_137">Existing Liens ($) <span class="req">*</span></label>
+    <label class="field-label" for="field_137">Existing Liens on Collateral <span class="req">*</span></label>
     <input type="text" id="field_137" name="field_137" placeholder="0.00" pattern="^\d+(\.\d{1,2})?$" required>
-    <p class="help-text">Enter the total dollar amount of existing liens or encumbrances currently on the collateral</p>
+    <p class="help-text">Enter the total dollar amount of any existing liens or encumbrances currently on the collateral being offered for this loan.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_138">Collateral Location <span class="req">*</span></label>
-    <input type="text" id="field_138" name="field_138" placeholder="Enter the physical address or location of the collateral" maxlength="500" required>
-    <p class="help-text">Provide the complete physical address where the collateral (asset being used to secure the loan) is located. This helps the lender verify and access the collateral if necessary.</p>
+    <input type="text" id="field_138" name="field_138" placeholder="Enter the address where collateral is located" maxlength="500" required>
+    <p class="help-text">Provide the physical address where the collateral (assets securing this loan) is located. This may be different from your business address.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_139">Collateral Description (Item 2)</label>
-    <input type="text" id="field_139" name="field_139" placeholder="Describe the collateral (e.g., equipment, real estate, inventory)" maxlength="500">
-    <p class="help-text">Provide a detailed description of the second collateral item being offered to secure the loan, including type, condition, and any identifying information.</p>
+    <label class="field-label" for="field_139">Collateral Description (Second Item)</label>
+    <input type="text" id="field_139" name="field_139" placeholder="e.g., Equipment, real estate, vehicles, inventory" maxlength="500">
+    <p class="help-text">Describe the second collateral item being offered to secure the loan, including type and identifying details.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_140">Estimated Value</label>
     <input type="text" id="field_140" name="field_140" placeholder="Enter dollar amount" pattern="^\d+(\.\d{1,2})?$">
-    <p class="help-text">Provide the estimated current market value of the additional collateral in US dollars</p>
+    <p class="help-text">Enter the estimated dollar value of the additional collateral being offered (if any).</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_141">Existing Liens ($)</label>
-    <input type="text" id="field_141" name="field_141" placeholder="0.00" maxlength="15" pattern="^\d+(\.\d{1,2})?$">
-    <p class="help-text">Enter the total dollar amount of any existing liens on this collateral (e.g., mortgages, loans, or other claims)</p>
+    <label class="field-label" for="field_141">Existing Liens (Collateral 2)</label>
+    <input type="text" id="field_141" name="field_141" placeholder="Enter dollar amount" pattern="^\$?\d{1,3}(,?\d{3})*(\.\d{2})?$|^\d+(\.\d{2})?$">
+    <p class="help-text">Enter the total dollar amount of existing liens on the second collateral item. This represents any outstanding debts or claims already secured by this asset.</p>
   </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_142" name="field_142"> Primary Applicant Personal Guarantee</label>
+        <p class="help-text">Check this box if the primary applicant agrees to provide a personal guarantee for this application</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_143" name="field_143"> Co-applicant Personal Guarantee</label>
         <p class="help-text">Check this box if the co-applicant agrees to provide a personal guarantee for this application</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_143" name="field_143"> Other Guarantor</label>
-        <p class="help-text">Check this box if there is an additional guarantor beyond the personal guarantee. A separate guarantee form must be attached.</p>
-      </div>
-<div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_144" name="field_144"> Other Guarantor</label>
-        <p class="help-text">Select if you have an additional guarantor not listed above. You must attach a separate guarantee form for this guarantor.</p>
+        <p class="help-text">Select if a guarantor other than the primary applicant or co-applicant will provide a personal guarantee. A separate guarantee form must be attached.</p>
       </div>
   </section>
 <section id="page_8" class="form-section">
     <h2 class="section-heading">Page 8</h2>
     <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_145" name="field_145" required> Have you declared bankruptcy in the past 7 years? <span class="req">*</span></label>
-        <p class="help-text">If you answer &#39;Yes&#39;, you must provide a written explanation on a separate sheet and attach it to this application. False statements may result in denial of the application and may constitute a federal crime.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_145" name="field_145" required> Have you declared bankruptcy? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you have ever filed for bankruptcy. This information may be required for credit or financial assessments.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_146" name="field_146" required> No, I have not declared bankruptcy <span class="req">*</span></label>
-        <p class="help-text">Check this box if you have NOT filed for bankruptcy in the past 7 years</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_146" name="field_146" required> Have you declared bankruptcy? <span class="req">*</span></label>
+        <p class="help-text">Select &#39;No&#39; if you have not declared bankruptcy in the past</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_147" name="field_147" required> Have you had property foreclosed upon or given title or deed in lieu thereof in the last 7 years? <span class="req">*</span></label>
-        <p class="help-text">Select &#39;Yes&#39; if either the primary applicant or co-applicant has experienced foreclosure or given a deed in lieu of foreclosure within the past 7 years. If you answer &#39;Yes&#39;, you must provide a written explanation on a separate sheet.</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_147" name="field_147" required> Are you currently subject to foreclosure proceedings? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you are currently subject to any foreclosure proceedings on any property.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_148" name="field_148" required> No foreclosure proceedings <span class="req">*</span></label>
-        <p class="help-text">Check this box if there are no foreclosure proceedings against you or your property</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_148" name="field_148" required> No Foreclosure <span class="req">*</span></label>
+        <p class="help-text">Select if you are NOT involved in a foreclosure proceeding</p>
       </div>
 <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_149" name="field_149" required> Are you currently involved in any lawsuit? <span class="req">*</span></label>
-        <p class="help-text">Indicate whether you are currently a party to any pending lawsuit or legal proceeding.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_150" name="field_150"> No pending lawsuits</label>
-        <p class="help-text">Check this box if you have no pending lawsuits or legal actions</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_151" name="field_151" required> Are you presently subject to a tax lien? <span class="req">*</span></label>
-        <p class="help-text">Indicate if you are currently subject to any federal, state, or local tax liens. A tax lien is a legal claim by a government entity against your property when you fail to pay tax debt.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_152" name="field_152" required> No tax liens <span class="req">*</span></label>
-        <p class="help-text">Check this box to indicate you do not have any outstanding federal tax liens or other tax debt.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_153" name="field_153"> Currently Delinquent on Any Federal Debt - Yes</label>
-        <p class="help-text">Check this box if you are currently delinquent on any federal debt (e.g., federal taxes, student loans, child support, or other obligations). If you are not delinquent, leave this unchecked.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_154" name="field_154"> No, I am not delinquent on any federal debt</label>
-        <p class="help-text">Check this box if you are NOT currently delinquent on any federal debt obligations</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_155" name="field_155" required> Yes, I have been convicted of a felony <span class="req">*</span></label>
-        <p class="help-text">Check this box if you have been convicted of a felony. This information may be required for background check or licensing purposes.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_156" name="field_156" required> No - I have not been convicted of a felony <span class="req">*</span></label>
-        <p class="help-text">Check this box if you have NOT been convicted of a felony. This is typically a required disclosure for official applications.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_157" name="field_157"> Yes, I have an obligation to file a return</label>
-        <p class="help-text">Select this option if you are required to file a tax return based on your income, filing status, or other circumstances.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_158" name="field_158"> No</label>
-        <p class="help-text">Select if you are not declaring an obligation</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_159" name="field_159"> Other Applications - Yes</label>
-        <p class="help-text">Check this box if you have other applications pending or approved with immigration authorities</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_160" name="field_160"> No other applications filed</label>
-        <p class="help-text">Check this box if you have not filed any other applications or petitions for this beneficiary</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_161" name="field_161" required> Are you employed by or have you worked for the government? <span class="req">*</span></label>
-        <p class="help-text">Check this box if you are currently employed by or have previously worked for any government entity (federal, state, or local).</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_162" name="field_162" required> No - Not a Government Official <span class="req">*</span></label>
-        <p class="help-text">Check this box if you are NOT a government official or public servant. This is typically part of a declaration or disclosure requirement.</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_163" name="field_163"> Yes, this transaction involves a related party</label>
-        <p class="help-text">Check this box if the transaction involves a related party (e.g., family member, business associate, or entity in which you have an ownership interest)</p>
-      </div>
-<div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_164" name="field_164"> No, I am not a related party</label>
-        <p class="help-text">Check this box if you are not a related party to the organization or transaction. This is typically part of a declaration section where you must indicate your relationship status.</p>
+        <p class="help-text">Indicate whether you are currently a party to any pending lawsuit or legal action</p>
       </div>
 <div class="field">
-    <label class="field-label" for="field_165">Explanation</label>
-    <input type="text" id="field_165" name="field_165" placeholder="Provide additional explanation or details here..." maxlength="5000">
-    <p class="help-text">Use this field to provide any additional explanations, clarifications, or details related to your declaration.</p>
+        <label class="field-label">Have you been involved in any lawsuits? <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_150" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_150" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_150" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Indicate whether you have been involved in any lawsuits. Select &#39;No&#39; if you have not been involved in any legal proceedings.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_151" name="field_151" required> Do you have any tax liens? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you currently have any outstanding tax liens filed against you or your property.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_152" name="field_152" required> Are there any outstanding judgments against you? <span class="req">*</span></label>
+        <p class="help-text">Indicate if you currently have any unsatisfied judgments or court-ordered debts. Select &quot;No&quot; if you do not have any outstanding judgments.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_153" name="field_153" required> Are you currently delinquent on any federal debt? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you have any overdue federal debt obligations, such as tax debts, student loans, or other government debts.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_154" name="field_154" required> Are you currently delinquent on any Federal debt? <span class="req">*</span></label>
+        <p class="help-text">Select &#39;No&#39; if you are not currently delinquent on any Federal debt obligations (such as student loans, tax debt, or other government debts).</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_155" name="field_155" required> Have you ever been convicted of a felony? <span class="req">*</span></label>
+        <p class="help-text">Select &#39;Yes&#39; if you have ever been convicted of a felony offense. This may affect your application.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_156" name="field_156" required> Have you ever been convicted of a felony? <span class="req">*</span></label>
+        <p class="help-text">Select &#39;No&#39; if you have never been convicted of a felony offense. A felony conviction may affect your eligibility.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_157" name="field_157" required> Do you have any legal obligations? <span class="req">*</span></label>
+        <p class="help-text">Select &#39;Yes&#39; if you have any legal obligations or declarations to report.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_158" name="field_158"> I am not subject to backup withholding</label>
+        <p class="help-text">Check this box if you are not subject to backup withholding because: (a) you are exempt from backup withholding, or (b) you have not been notified by the IRS that you are subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified you that you are no longer subject to backup withholding.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_159" name="field_159" required> Other Pending or Filed Applications <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you have any other applications pending or filed with immigration authorities</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_160" name="field_160"> No, I have not filed other applications for this invention</label>
+        <p class="help-text">Select this option if you have not filed any other patent or invention applications related to this invention (domestic or foreign)</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_161" name="field_161" required> Are you employed by or have you ever been employed by the U.S. Government? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you are currently employed by or have ever been employed by any U.S. Government agency or department.</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_162" name="field_162" required> Are you a government employee? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you are currently employed by a government entity</p>
+      </div>
+<div class="field checkbox-field">
+        <label class="checkbox-label"><input type="checkbox" id="field_163" name="field_163" required> Are you a related party? <span class="req">*</span></label>
+        <p class="help-text">Indicate whether you are a related party to the transaction or entity. Related parties typically include family members, business associates, or entities with common ownership or control.</p>
+      </div>
+<div class="field">
+        <label class="field-label">Related Party: No <span class="req">*</span></label>
+        <div class="radio-group"><label class="radio-label"><input type="radio" name="field_164" value="Option 1" required> Option 1</label>
+          <label class="radio-label"><input type="radio" name="field_164" value="Option 2"> Option 2</label>
+          <label class="radio-label"><input type="radio" name="field_164" value="Option 3"> Option 3</label></div>
+        <p class="help-text">Select this option if there is no related party involved in this declaration</p>
+      </div>
+<div class="field">
+    <label class="field-label" for="field_165">Explanation of Relationship</label>
+    <input type="text" id="field_165" name="field_165" placeholder="Please describe your relationship with the bank employee or director" maxlength="500">
+    <p class="help-text">If you answered &#39;Yes&#39; to having a relationship with a First National Bank employee or director, please provide details about the nature of this relationship.</p>
   </div>
   </section>
 <section id="page_9" class="form-section">
     <h2 class="section-heading">Page 9</h2>
     <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_166" name="field_166"> Personal Tax Documents</label>
-        <p class="help-text">Check this box if you are providing personal tax documents</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_166" name="field_166"> Personal tax returns — prior year</label>
+        <p class="help-text">Check if you are submitting personal tax returns from the prior year</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_167" name="field_167"> Personal Tax Document</label>
-        <p class="help-text">Check this box if you are submitting personal tax documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_167" name="field_167"> Personal tax returns — prior year</label>
+        <p class="help-text">Check this box if you are providing your personal tax returns from the prior year</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_168" name="field_168"> Business Tax Document</label>
-        <p class="help-text">Check this box if you need to submit business tax documents</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_168" name="field_168"> Business Tax Returns — Prior Year</label>
+        <p class="help-text">Check if you are providing business tax returns from the prior year</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_169" name="field_169"> Business Tax Document</label>
-        <p class="help-text">Check if you are providing business tax documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_169" name="field_169"> Business tax returns — prior year</label>
+        <p class="help-text">Check this box if you are providing your business tax returns from the prior year</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_170" name="field_170"> Financial Statement</label>
-        <p class="help-text">Check this box if you are submitting a financial statement as part of your documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_170" name="field_170"> Business bank statements — last 6 months</label>
+        <p class="help-text">Please provide your business bank statements covering the most recent 6-month period.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_171" name="field_171"> Bank Statements</label>
-        <p class="help-text">Check this box if you are submitting bank statements as supporting documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_171" name="field_171"> Business bank statements — last 6 months</label>
+        <p class="help-text">Please provide your business bank statements from the last 6 months. This helps verify your business&#39;s financial history and cash flow.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_172" name="field_172"> Personal Bank Statements</label>
-        <p class="help-text">Check this box if you are providing personal bank statements as supporting documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_172" name="field_172"> Personal Bank Statements (Last 3 Months)</label>
+        <p class="help-text">Check this box to confirm you will provide your personal bank statements for the last 3 months. This may be required to verify financial stability and cash flow.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_173" name="field_173"> Business Plan</label>
-        <p class="help-text">Check this box if you are including a business plan with your application</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_173" name="field_173" required> Business Plan <span class="req">*</span></label>
+        <p class="help-text">Required for startup businesses. Please attach a comprehensive business plan document.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_174" name="field_174"> Articles of Incorporation/Organization</label>
-        <p class="help-text">Check this box if you are submitting articles of incorporation or organization with this form</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_174" name="field_174" required> Articles of Incorporation / Organization <span class="req">*</span></label>
+        <p class="help-text">Check this box to confirm you will provide your Articles of Incorporation (for corporations) or Articles of Organization (for LLCs)</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_175" name="field_175"> Document Licenses</label>
-        <p class="help-text">Select if you have professional licenses or certifications to document</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_175" name="field_175" required> Business Licenses and Permits <span class="req">*</span></label>
+        <p class="help-text">Check this box to confirm you have attached copies of all relevant business licenses and permits required to operate your business.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_176" name="field_176"> Lease Agreement</label>
-        <p class="help-text">Check if you are providing a lease agreement as supporting documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_176" name="field_176"> Commercial Lease Agreement</label>
+        <p class="help-text">Check this box if you have a commercial lease agreement to submit. This document is only required if your business operates from a leased commercial property.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_177" name="field_177"> Copy of Document ID</label>
-        <p class="help-text">Check this box if you are providing a copy of a document ID or identification</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_177" name="field_177"> Copy of Government-Issued Photo ID</label>
+        <p class="help-text">Check this box if you are including a copy of a government-issued photo ID (e.g., driver&#39;s license, passport) with your application.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_178" name="field_178"> Insurance Documents</label>
-        <p class="help-text">Check this box if you are including insurance documentation with your submission</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_178" name="field_178"> Proof of Business Insurance</label>
+        <p class="help-text">Check this box to indicate that proof of business insurance documentation is included with this application</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_179" name="field_179"> Accounts Payable/Accounts Receivable Documentation</label>
-        <p class="help-text">Check this box if you are submitting accounts payable or accounts receivable documentation</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_179" name="field_179"> Accounts Receivable/Payable Aging Report</label>
+        <p class="help-text">Check if you are providing an accounts receivable or accounts payable aging report as part of your additional documentation</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_180" name="field_180"> Collateral Documents</label>
-        <p class="help-text">Check if collateral documentation is included or required</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_180" name="field_180"> Collateral Documentation</label>
+        <p class="help-text">Check if you are providing collateral documentation such as titles, deeds, or appraisals to support your application</p>
       </div>
 <div class="field">
     <label class="field-label" for="field_181">Additional Information</label>
-    <input type="text" id="field_181" name="field_181" placeholder="Provide any business achievements, contracts, growth projections, or circumstances you&#39;d like to explain..." maxlength="2000">
-    <p class="help-text">Use this space to highlight any information that may strengthen your application, such as recent business achievements, existing contracts, projected growth, or any special circumstances that should be considered during evaluation.</p>
+    <input type="text" id="field_181" name="field_181" placeholder="Describe any business achievements, contracts, growth projections, or circumstances relevant to your application..." maxlength="2000">
+    <p class="help-text">Use this space to provide any additional information that may help us evaluate your application, including business achievements, contracts in hand, growth projections, or any circumstances you would like to explain.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_182">How did you hear about our lending program? <span class="req">*</span></label>
+    <label class="field-label" for="field_182">How did you hear about us? <span class="req">*</span></label>
     <select id="field_182" name="field_182" required>
           <option value="-- Select --">-- Select --</option><option value="Existing customer">Existing customer</option><option value="Referral">Referral</option><option value="Website">Website</option><option value="Advertisement">Advertisement</option><option value="Business association">Business association</option><option value="CPA / Attorney">CPA / Attorney</option><option value="Other">Other</option>
         </select>
-    <p class="help-text">Please select the source through which you learned about our lending services. If you were referred by someone, you&#39;ll be asked to provide their name in the next field.</p>
+    <p class="help-text">Please select how you learned about our lending program. If you were referred by someone, you&#39;ll be asked to provide their name in the next field.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_183">Referral Name</label>
     <input type="text" id="field_183" name="field_183" placeholder="Enter the name of the person who referred you" maxlength="100">
-    <p class="help-text">If you were referred to our lending program by someone, please provide their name here.</p>
+    <p class="help-text">Please provide the full name of the person or organization that referred you to our lending program</p>
   </div>
   </section>
 <section id="page_10" class="form-section">
     <h2 class="section-heading">Page 10</h2>
     <div class="field checkbox-field">
         <label class="checkbox-label"><input type="checkbox" id="field_184" name="field_184" required> I agree to the terms and conditions <span class="req">*</span></label>
-        <p class="help-text">You must agree to the terms and conditions to proceed with this application</p>
+        <p class="help-text">You must agree to the terms and conditions to proceed with your application</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_185" name="field_185" required> I agree to a credit check <span class="req">*</span></label>
-        <p class="help-text">By checking this box, you authorize us to perform a credit check as part of your application review</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_185" name="field_185" required> I/We authorize credit report inquiries <span class="req">*</span></label>
+        <p class="help-text">By checking this box, you authorize the lender to perform credit report inquiries as part of the application process.</p>
       </div>
 <div class="field checkbox-field">
-        <label class="checkbox-label"><input type="checkbox" id="field_186" name="field_186" required> I agree to electronic signature <span class="req">*</span></label>
-        <p class="help-text">By checking this box, you consent to sign this document electronically</p>
+        <label class="checkbox-label"><input type="checkbox" id="field_186" name="field_186"> I agree to use electronic signature</label>
+        <p class="help-text">Check this box to consent to signing this document electronically instead of with a handwritten signature</p>
       </div>
 <div class="field">
-    <label class="field-label" for="field_187">Print Name (Primary Applicant) <span class="req">*</span></label>
-    <input type="text" id="field_187" name="field_187" placeholder="Enter your full legal name" maxlength="100" pattern="^[a-zA-Z\s\-\.]+$" required>
-    <p class="help-text">Please print your full legal name as it appears on official documents. This should match the signature above.</p>
+    <label class="field-label" for="field_187">Primary Applicant Printed Name <span class="req">*</span></label>
+    <input type="text" id="field_187" name="field_187" placeholder="Enter your full legal name" maxlength="100" pattern="^[a-zA-Z\s\-&#39;.]+$" required>
+    <p class="help-text">Please print your full legal name as it appears on your identification. This should match the signature provided.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_188">Primary Applicant Signature <span class="req">*</span></label>
     <input type="text" id="field_188" name="field_188" class="signature-input" placeholder="Sign here" required>
-    <p class="help-text">By signing, you authorize credit report inquiries and confirm the accuracy of the information provided in this application.</p>
+    <p class="help-text">Please sign to authorize credit report inquiries and confirm you have read and agree to the terms and conditions</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_189">Date Signed <span class="req">*</span></label>
     <input type="date" id="field_189" name="field_189" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter the date when the primary applicant signed this document</p>
+    <p class="help-text">Enter the date when you signed this document</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_190">Co-Applicant/Guarantor Printed Name <span class="req">*</span></label>
-    <input type="text" id="field_190" name="field_190" placeholder="Print your full legal name" maxlength="100" pattern="^[A-Za-z\s&#39;-]+$" required>
-    <p class="help-text">Enter the full printed name of the co-applicant or guarantor. This should match the signature provided above.</p>
+    <label class="field-label" for="field_190">Co-Applicant / Guarantor Printed Name <span class="req">*</span></label>
+    <input type="text" id="field_190" name="field_190" placeholder="Enter full legal name" maxlength="100" pattern="^[A-Za-z\s\-\&#39;]+$" required>
+    <p class="help-text">Print your full legal name as the co-applicant or guarantor. This should match your signature above.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_191">Co-Applicant / Guarantor Signature</label>
     <input type="text" id="field_191" name="field_191" class="signature-input" placeholder="Sign here">
-    <p class="help-text">Sign here if you are a co-applicant or guarantor on this loan application. This field is only required if there is a co-applicant or guarantor.</p>
+    <p class="help-text">Signature of the co-applicant or guarantor, if applicable. This field should only be completed if there is a co-applicant or guarantor on the loan application.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_192">Date Signed <span class="req">*</span></label>
+    <label class="field-label" for="field_192">Co-Signer Date Signed <span class="req">*</span></label>
     <input type="date" id="field_192" name="field_192" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter the date when you signed this document</p>
+    <p class="help-text">Enter the date when the co-signer signed this document</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_193">Loan Officer Name <span class="req">*</span></label>
-    <input type="text" id="field_193" name="field_193" placeholder="Enter loan officer&#39;s full name" maxlength="100" pattern="^[A-Za-z\s.&#39;-]+$" required>
-    <p class="help-text">For bank use only. This section must be completed by the assigned loan officer.</p>
+    <input type="text" id="field_193" name="field_193" placeholder="Enter loan officer&#39;s full name" maxlength="100" required>
+    <p class="help-text">For bank use only. The name of the loan officer processing this application.</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_194">Officer ID <span class="req">*</span></label>
     <input type="text" id="field_194" name="field_194" placeholder="Enter officer identification number" maxlength="20" pattern="^[A-Z0-9-]+$" required>
-    <p class="help-text">Enter the unique identification number assigned to the loan officer processing this application.</p>
+    <p class="help-text">This field is for internal use only. Loan officers should enter their unique identification number.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_195">Bank Branch</label>
-    <input type="text" id="field_195" name="field_195" placeholder="Enter branch name or number" maxlength="100">
-    <p class="help-text">Provide the specific branch location or branch number where your account is held</p>
+    <label class="field-label" for="field_195">Bank Branch <span class="req">*</span></label>
+    <input type="text" id="field_195" name="field_195" placeholder="Enter branch name or number" maxlength="100" required>
+    <p class="help-text">Enter the name or branch code of your bank branch (e.g., &quot;Main Street Branch&quot; or &quot;001234&quot;)</p>
   </div>
   </section>
 <section id="page_11" class="form-section">
@@ -1230,24 +1238,24 @@ input[type="radio"] {
     <div class="field">
     <label class="field-label" for="field_196">Date Received <span class="req">*</span></label>
     <input type="date" id="field_196" name="field_196" placeholder="MM/DD/YYYY" required>
-    <p class="help-text">Enter the date the bank received the application</p>
+    <p class="help-text">Enter the date when the bank received the application</p>
   </div>
 <div class="field">
     <label class="field-label" for="field_197">Application Number <span class="req">*</span></label>
-    <input type="text" id="field_197" name="field_197" placeholder="Enter application number" maxlength="50" required>
-    <p class="help-text">Unique identifier assigned to this bank application</p>
+    <input type="text" id="field_197" name="field_197" placeholder="e.g., APP-2024-001234" maxlength="50" pattern="^[A-Z0-9-]+$" required>
+    <p class="help-text">Enter the unique application number assigned to this bank application</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_198">Application Status <span class="req">*</span></label>
+    <label class="field-label" for="field_198">Bank Application Status <span class="req">*</span></label>
     <select id="field_198" name="field_198" required>
           <option value="-- Select --">-- Select --</option><option value="Received">Received</option><option value="Under Review">Under Review</option><option value="Additional Info Needed">Additional Info Needed</option><option value="Approved">Approved</option><option value="Conditionally Approved">Conditionally Approved</option><option value="Denied">Denied</option><option value="Withdrawn">Withdrawn</option>
         </select>
-    <p class="help-text">Select the current status of the bank application. This indicates where the application is in the review process.</p>
+    <p class="help-text">Select the current status of the bank application. This will be used to track the application through the review process.</p>
   </div>
 <div class="field">
-    <label class="field-label" for="field_199">Bank Notes</label>
-    <input type="text" id="field_199" name="field_199" placeholder="Enter any additional notes or comments about your bank account" maxlength="500">
-    <p class="help-text">Use this field to record any special instructions, account details, or other relevant information about your banking arrangements</p>
+    <label class="field-label" for="field_199">Bank Notes Date</label>
+    <input type="date" id="field_199" name="field_199" placeholder="MM/DD/YYYY">
+    <p class="help-text">Enter the date for any bank-related notes or observations</p>
   </div>
   </section>
   </div>

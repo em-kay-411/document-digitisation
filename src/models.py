@@ -60,7 +60,7 @@ class RawField(BaseModel):
 
 
 class TextElement(BaseModel):
-    """A text element extracted from the PDF via Docling."""
+    """A text element extracted from the PDF via PyMuPDF."""
 
     text: str
     page: int
